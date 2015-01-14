@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+  {% block contenido%}
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+       
+        <div class="carousel-inner">
+      
+            <div class="item active">
+             
+             <div class="fill" style="#"><img src="static/imagenes/slider/slider5.jpg"> </div>
+                <div class="carousel-caption">
+                    <h2>Casa moderna</h2>
+                </div>
+                   
+            </div>
+            
+           
+            <div class="item">
+                <div class="fill" style="#"><img src="static/imagenes/slider/slider4.jpg" alt="Arquitectura"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+               <div class="fill" style="#"><img src="static/imagenes/slider/slider1.jpg" alt="Arquitectura"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Bienvenido 
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i>Campo de Trabajo </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>El arquitecto es el profesional que asume la responsabilidad de proyectar y construir los espacios habitables que necesita la sociedad, incluyendo aspectos físicos y culturales. Su trabajo surge a partir de las necesidades de la sociedad, en este sentido debe promover los medios para cubrir esas expectativas sin deteriorar el contexto cultural y ecológico.</p>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i>Objetivo General</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Formar en competencias, profesionistas lideres con excelencia academica y humanistica, capaces de diseñar, gestionar y construir el habitad humano con alto desempeño, sustentabilidad y vocacion de servicio a la sociedad.</p>
+                       <!-- <a href="#" class="btn btn-default">Leer m&aacute;s</a>
+                    -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i>Quehacer profesional </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>El arquitecto es el profesional que asume la responsabilidad de proyectar y construir los espacios habitables que necesita la sociedad, incluyendo aspectos físicos y culturales.
+                        Su trabajo surge a partir de las necesidades de la sociedad, en este sentido debe promover los medios para cubrir esas expectativas sin deteriorar el contexto cultural y ecológico.</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Noticias</h2>
+            </div>
+           <!-- Page Features -->
+        {% for entrada in object_list %}
+        
+            <div class="col-md-4 text-center" >
+             
+             <a href="/noticias/{{ entrada.slug}}">
+                <div class="thumbnail">
+                
+                <span class="news-date"><h5>{{ entrada.time|date:"d M " }}</h5></span>
+              
+               
+                    <img class="img-responsive" src="{{ entrada.imagen.url}}" height="750px">
+                    <div class="caption">
+                   
+                        <h3>{{ entrada.titulo }} <br></h3>
+                            <h4><small>Publicado: {{ entrada.time}}</small></h4>
+                        
+                       <h5> <p>{{ entrada.resumen }}</p></h5>
+                  
+
+                        
+                        
+                    </div>
+                    
+                </div>
+                </a>
+            </div>
+
+            {% endfor %}
+
+        
+            
+            
+        </div>
+           <hr>
+                
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        
+        <!-- /.row -->
+
+        
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+       {% endblock%}
