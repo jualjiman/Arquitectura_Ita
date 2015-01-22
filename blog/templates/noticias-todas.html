@@ -15,7 +15,7 @@
                 <ol class="breadcrumb">
                     <li><a href="/">Inicio</a>
                     </li>
-                    <li class="active">Noticias</li>
+                    <li class="active">Todas las noticias</li>
                 </ol>
             </div>
         </div>
@@ -30,7 +30,9 @@
 
             <div class="col-md-7">
                 <a href="/noticias/{{ entrada.slug }}">
-                     <img class="img-responsive img-hover" src="{{entrada.imagen.url }}" alt="" width="600px">
+                     
+                      {% load thumbnail %}
+               <img src="{{ entrada.imagen|thumbnail_url:'noticiaT' }}" alt="" />
                 </a>
             </div>
             <div class="col-md-5">

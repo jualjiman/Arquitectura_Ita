@@ -47,8 +47,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 
-         <a href="/" class="logo"><img src="{% static 'imagenes/logo/Logo.jpg' %}" width="200px"></a>
-         <a href="/" class="logo"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
+         <a href="/" class="logo"><img src="{% static 'imagenes/logo/Logo1.png' %}" width="200px"></a>
+         <a href="/" class="logo2"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,8 +56,9 @@
                     <li>
                         <a href="about.html">Acreditaci&aacute;n</a>
                     </li>
+                   
                  
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumnos<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
@@ -119,8 +120,30 @@
 
 
 {% block contenido%} {%endblock%}
+{% block  error%} {%endblock%}
+    <hr>
+    <div class="row">
+        <div class="col-xs-3 col-sm-4">
+                <hr>
+                    
+                    <hr>
 
+        </div>
+            <div class="col-xs-6 col-sm-4 text-center">
+               
+                <img class="footer1"src="{% static 'imagenes/logo/logosep.png' %}" width="200px">
+               
+            </div>
 
+                <div class="col-xs-3 col-sm-4">
+                    <hr>
+                       
+                        <hr>
+                </div>
+                    <div class="col-xs-12">
+                <hr>
+            </div>
+        </div>
 
 
        
@@ -129,7 +152,7 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 ">
                     <p>Copyright &copy; Avenida Instituto Tecnológico S/N, Crucero del Cayaco C.P. 39905, Teléfonos (744) 442-9010 al 19 y Fax (744) 468-3505 </p>
                 </div>
             </div>
@@ -149,6 +172,29 @@
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+
+
+    /* resize facebook comments */
+(function(window){
+    var dh = null;
+    $(window).on("resize",function(){
+        if ( dh ) {
+            clearTimeout(dh);
+        }
+        dh = setTimeout(function(){
+            var $fbc = $(".fb-comments");
+            var $stc = $(".comments-container");
+            dh = null;
+            if ( $fbc.attr("data-width") != $stc.width() ) {
+                $stc.css({height:$stc.height()});
+                $fbc.attr("data-width", $stc.width());
+                FB.XFBML.parse($stc[0],function(){
+                    $stc.css({height:'auto'});
+                });
+            }
+        },300);
+    }).trigger("resize");
+})(this);
     </script>
 
 </body>

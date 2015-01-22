@@ -24,7 +24,13 @@ urlpatterns = patterns('',
 	(r'^ckeditor/', include('ckeditor.urls')),
 
 
+	url(r'^e404/$', 'blog.views.e404', name='e404'),
+	
+
+
     #url(r'^noticias/(\d+)/$', 'blog.views.noticias', name='noticias'),
 
 
 )
+handler404 = "blog.views.e404"
+handler500 = "blog.views.e500"

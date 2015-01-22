@@ -1,8 +1,8 @@
-from django.db import models
+from django.db import models 
 from django.contrib import admin
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
-from sorl.thumbnail import ImageField
+
 
 
 #from tinymce import models as tinymce_models
@@ -20,9 +20,12 @@ class Entrada(models.Model):
 	contenido = RichTextField()
 	time = models.DateTimeField()
 	slug = models.SlugField(editable=False)
+
+
+
 	
 	
-	
+
 	class Meta:
 		ordering = ['-time']
 
@@ -34,8 +37,10 @@ class Entrada(models.Model):
 			self.slug = slugify(self.titulo)
 		super(Entrada, self).save( *args, **kwargs)
 
-	def get_query_set (self):
-		return super(Entrada, self).get_query_set()[:3]
+	#def get_queryset(self):
+	#	return Entrada.objects.all().order_by('-time')[:3]
+
+	
 
 
 	

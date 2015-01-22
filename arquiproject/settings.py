@@ -36,11 +36,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'easy_thumbnails',
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
-    'sorl.thumbnail',
     
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,8 +96,20 @@ CKEDITOR_UPLOAD_PATH = "/media/"# Subir archivos
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 300,
-        'width': 800,
+        'width': 'auto',
+
+        
+       
         
     },
 }
+
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'noticia': {'size': (750, 400), 'crop': True},
+        'noticiaG': {'size': (730, 380), 'crop': True},
+        'noticiaT': {'size': (600, 250), 'crop': True},
+    },
+}
+

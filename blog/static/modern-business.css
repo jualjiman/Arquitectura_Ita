@@ -14,12 +14,18 @@ body {
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+.fb-comments, .fb-comments span, .fb-comments iframe[style] {
+    width: 100% !important;
+}
 
 .col-md-4 a {
 
     text-decoration: none;
     color: black;
 }
+.footer1{max-width: 98%;
+margin: 0 auto;}
+
 .thumbnail{
 position: relative;
 min-height: 412px !important;
@@ -121,6 +127,7 @@ footer {
     .img-related {
         margin-bottom: 30px;
     }
+    .logo2 img{display: none;}
 }
 
 @media(max-width:767px) {
