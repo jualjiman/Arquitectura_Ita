@@ -1,5 +1,5 @@
-from django.views.generic import ListView,DetailView
-from .models import Entrada,Slider
+from django.views.generic import ListView,DetailView,TemplateView
+from .models import Entrada
 from .models import *
 from django.db.models import Q
 from django.shortcuts import render,get_object_or_404
@@ -11,25 +11,27 @@ from django.shortcuts import render,get_object_or_404
 	#return render_to_response('index.html')
 
 
-class IndexView(ListView):
+def index(request):
 	
-	entradas = Entrada.objects.all()[:3]
-	template_name = "index.html"
-	
-	model = Entrada
-	
+	sliders = Slider.objects.filter(activo = True)
+	entradas = Entrada.objects.all()[:6]
 	
 
+	return render(
+					request,
+					"index.html",
+					{
+					"entradas":entradas,
+					"sliders":sliders,
+					})
 	
-	
+
 
 class TodasNView(ListView):
-	template_name = "noticias-todas.html"
 	model  = Entrada
 	
 
 
 class NoticiasView(DetailView):
-	template_name = "noticias.html"
 	model = Entrada
 	

@@ -12,7 +12,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 )
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
-# Create your models here.
+# Create your models here.)
 class Entrada(models.Model):
 	imagen = models.ImageField(upload_to = 'imagenes')
 	titulo = models.CharField(max_length=100)
@@ -20,7 +20,6 @@ class Entrada(models.Model):
 	contenido = RichTextField()
 	time = models.DateTimeField()
 	slug = models.SlugField(editable=False)
-
 
 
 	
@@ -37,20 +36,15 @@ class Entrada(models.Model):
 			self.slug = slugify(self.titulo)
 		super(Entrada, self).save( *args, **kwargs)
 
-	#def get_queryset(self):
-	#	return Entrada.objects.all().order_by('-time')[:3]
-
 	
-
-
 	
-		
-
-
-
 class Slider(models.Model):
 	imagen = models.ImageField(upload_to= 'noticias')
 	titulo = models.CharField(max_length=50)
+	activo = models.BooleanField(default=True, help_text="Debera ser mostrado?")
+
+	def __unicode__(self):
+		return self.titulo
 	
 	
 
