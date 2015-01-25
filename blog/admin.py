@@ -9,7 +9,7 @@ from easy_thumbnails.files import get_thumbnailer
 
 class EntradaAdmin(admin.ModelAdmin):
 		list_display = ('titulo','imagen', 'time')
-		list_filter = ('titulo','time')
+		list_filter = ('time',)
 
 		def img_publicacion(self,model_instance):
 			return "<img src ='%s' />" % (get_thumbnailer(model_instance.imagen).url,)
@@ -18,6 +18,7 @@ class EntradaAdmin(admin.ModelAdmin):
 
 class SliderAdmin(admin.ModelAdmin):
 	list_display= ('titulo','imagen')
+	list_filter = ('titulo',)
 
 
 

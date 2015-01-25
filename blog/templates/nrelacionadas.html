@@ -5,17 +5,28 @@
             <div class="col-lg-12">
                 <h3 class="page-header">Noticias relacionadas</h3>
             </div>
-
+        
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive img-hover img-related" src="{% static 'imagenes/noticias/noticia1.jpg' %}" alt="">
+                
+                    <img class="img-responsive img-hover img-related" src="{{ object.imagen.url }}" alt="">
+                    <div class="caption">
+                    <p>{{object.titulo}}</p>
+
+                    </div>
+            
                 </a>
             </div>
+        
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
                     <img class="img-responsive img-hover img-related" src="{% static 'imagenes/noticias/noticia2.jpg' %}" alt="">
                 </a>
+                 <div class="caption">
+                    <p>Microsoft promete smartphones Windows Phone de gama alta </p>
+
+                    </div>
             </div>
 
             <div class="col-sm-3 col-xs-6">

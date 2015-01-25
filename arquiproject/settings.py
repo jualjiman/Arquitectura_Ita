@@ -110,7 +110,7 @@ THUMBNAIL_ALIASES = {
         'noticia': {'size': (750, 400), 'crop': True},
         'noticiaG': {'size': (730, 380), 'crop': True},
         'noticiaT': {'size': (600, 250), 'crop': True},
-        'slider': {'size': (1600, 500), 'crop': True},
+        'slider': {'size': (1500, 550), 'crop': True},
     },
 }
 

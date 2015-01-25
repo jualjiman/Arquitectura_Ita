@@ -1,4 +1,4 @@
-from django.views.generic import ListView,DetailView,TemplateView
+from django.views.generic import ListView,DetailView
 from .models import Entrada
 from .models import *
 from django.db.models import Q
@@ -16,6 +16,7 @@ def index(request):
 	sliders = Slider.objects.filter(activo = True)
 	entradas = Entrada.objects.all()[:6]
 	
+	
 
 	return render(
 					request,
@@ -23,15 +24,26 @@ def index(request):
 					{
 					"entradas":entradas,
 					"sliders":sliders,
+					
 					})
-	
+class NoticiasView(DetailView):
+	model = Entrada
 
 
 class TodasNView(ListView):
 	model  = Entrada
-	
 
 
-class NoticiasView(DetailView):
+class HistoriaView(ListView):
 	model = Entrada
+
+class MisionVisionView(ListView):
+	model=Entrada
+
+class PerfilIngresoView(ListView):
+	model = Entrada
+
+class AcreditacionView(ListView):
+	model=Entrada
+
 	

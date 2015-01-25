@@ -12,17 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    
+    {% block titulo %}<title>{{ entrada.titulo }} Instituto tecnologico de Acapulco</title>{% endblock%}
+    
 
-    <title>Instituto Tecnol&oacute;gico de Acapulco</title>
 
     <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'full-slider.css' %}" />
+
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}"  />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'modern-business.css' %}"  />
 
     <!-- Custom Fonts -->
-    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,7 +60,10 @@
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Acreditaci&aacute;n</a>
+                        <a href="/acreditacion/">Acreditaci&aacute;n</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Docentes</a>
                     </li>
                    
                  
@@ -80,31 +89,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Arquitectura <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="blog-home-1.html">Misi&oacute;n</a>
-                            </li>
+                                <a href="/mision-vision/">Misi&oacute;n,Visi&oacute;n</a>
+                            </li> 
                                <li>
-                                <a href="blog-home-2.html">Historia</a>
+                                <a href="/historia/">Historia</a>
                             </li>
-                            <li>
-                                <a href="blog-home-2.html">Visi&oacute;n</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Valores</a>
+                             <li>
+                                <a href="/perfil-ingreso/">Perfil de ingreso, egreso</a>
                             </li>
                         
                         </ul>
 
                     </li>
-                     
-                   <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">Docentes</a>
-                    </li>
-                   
-                    
-                    
-                    
-                </ul>
                
             </div>
             <!-- /.navbar-collapse -->
@@ -162,34 +158,13 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-
-
-    /* resize facebook comments */
-(function(window){
-    var dh = null;
-    $(window).on("resize",function(){
-        if ( dh ) {
-            clearTimeout(dh);
-        }
-        dh = setTimeout(function(){
-            var $fbc = $(".fb-comments");
-            var $stc = $(".comments-container");
-            dh = null;
-            if ( $fbc.attr("data-width") != $stc.width() ) {
-                $stc.css({height:$stc.height()});
-                $fbc.attr("data-width", $stc.width());
-                FB.XFBML.parse($stc[0],function(){
-                    $stc.css({height:'auto'});
-                });
-            }
-        },300);
-    }).trigger("resize");
-})(this);
-    </script>
+   <script>
+    $(document).ready(function(){
+        $('.myCarousel').carousel({
+            interval: 5000
+        });
+    });
+</script>
 
 </body>
 

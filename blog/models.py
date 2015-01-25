@@ -4,7 +4,6 @@ from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
 
 
-
 #from tinymce import models as tinymce_models
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
@@ -14,12 +13,14 @@ BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 # Create your models here.)
 class Entrada(models.Model):
-	imagen = models.ImageField(upload_to = 'imagenes')
-	titulo = models.CharField(max_length=100)
-	resumen = models.CharField(max_length=170)
+	imagen = models.ImageField(upload_to = 'imagenes',help_text="Imagen de la noticia")
+	titulo = models.CharField(max_length=100,help_text="Titulo de la noticia maximo 100 caracteres")
+	resumen = models.CharField(max_length=170,help_text="Resumen de la noticia maximo 170 caracteres")
 	contenido = RichTextField()
 	time = models.DateTimeField()
 	slug = models.SlugField(editable=False)
+	#descripcionArchivo = models.CharField(max_length=60, help_text="Texto descriptivo del archivo.")
+	#archivopdf = models.FileField(upload_to = "pdfpublicacion", help_text='Archivo asociado con la publicacion')
 
 
 	
@@ -39,9 +40,9 @@ class Entrada(models.Model):
 	
 	
 class Slider(models.Model):
-	imagen = models.ImageField(upload_to= 'noticias')
-	titulo = models.CharField(max_length=50)
-	activo = models.BooleanField(default=True, help_text="Debera ser mostrado?")
+	imagen = models.ImageField(upload_to= 'noticias',help_text="Imagen que sera mostrada")
+	titulo = models.CharField(max_length=50,help_text="Titulo que sera mostrado en la imagen, maximo 50 caracteres")
+	activo = models.BooleanField(default=True, help_text="Mostrar o no la imagen con texto")
 
 	def __unicode__(self):
 		return self.titulo
