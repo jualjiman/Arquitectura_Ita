@@ -1,6 +1,7 @@
 from django.views.generic import ListView,DetailView
 from .models import Entrada
 from .models import *
+from django.http import Http404
 from django.db.models import Q
 from django.shortcuts import render,get_object_or_404
 
@@ -45,5 +46,14 @@ class PerfilIngresoView(ListView):
 
 class AcreditacionView(ListView):
 	model=Entrada
+
+
+def e404(request):
+	return render(request,
+		'404.html',
+		{}
+		)
+
+
 
 	

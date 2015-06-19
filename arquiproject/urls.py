@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from blog import views
 #from django.views.generic import TemplateView
 from django.views.generic import ListView,DetailView
 from blog.views import NoticiasView,TodasNView,HistoriaView,MisionVisionView,PerfilIngresoView,AcreditacionView
@@ -28,20 +29,18 @@ urlpatterns = patterns('',
    #PERFIN DE INGRESO Y EGRESO
    url(r'^perfil-ingreso/$', (PerfilIngresoView.as_view(template_name = "perfil-ingreso.html"))),
    #ACREDITACION
-    url(r'^acreditacion/$', (AcreditacionView.as_view(template_name = "acreditacion.html"))),
-
-   
+   url(r'^acreditacion/$', (AcreditacionView.as_view(template_name = "acreditacion.html"))),
+    
    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT} ),
    #CKEDITOR
 	(r'^ckeditor/', include('ckeditor.urls')),
 
 
 	
-	
+
 
 
     #url(r'^noticias/(\d+)/$', 'blog.views.noticias', name='noticias'),
-
-
-)
+    )
+handler404='blog.views.e404'
 
