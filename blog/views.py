@@ -47,6 +47,9 @@ class PerfilIngresoView(ListView):
 class AcreditacionView(ListView):
 	model=Entrada
 
+class DocentesView(ListView):
+	model = Entrada
+
 
 def e404(request):
 	return render(request,

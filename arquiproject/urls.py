@@ -3,7 +3,7 @@ from django.contrib import admin
 from blog import views
 #from django.views.generic import TemplateView
 from django.views.generic import ListView,DetailView
-from blog.views import NoticiasView,TodasNView,HistoriaView,MisionVisionView,PerfilIngresoView,AcreditacionView
+from blog.views import *
 from django.conf import settings
 
 
@@ -30,6 +30,8 @@ urlpatterns = patterns('',
    url(r'^perfil-ingreso/$', (PerfilIngresoView.as_view(template_name = "perfil-ingreso.html"))),
    #ACREDITACION
    url(r'^acreditacion/$', (AcreditacionView.as_view(template_name = "acreditacion.html"))),
+   #DOCENTES
+   url(r'^docentes/$', (DocentesView.as_view(template_name = "construccion.html"))),
     
    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT} ),
    #CKEDITOR
