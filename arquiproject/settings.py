@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = (
-     'bootstrap_admin', # always before django.contrib.admin
+    'bootstrap_admin',  # always before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +43,6 @@ INSTALLED_APPS = (
     'blog',
     'ckeditor',
     'sorl.thumbnail',
-    
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -90,20 +88,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/var/www/virtual1/arquiproject/blog/static/imagenes'
-MEDIA_URL = 'http://127.0.0.1:8000/static/imagenes/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'blog/static')
 
-CKEDITOR_MEDIA_PREFIX = "/var/www/virtual1/arquiproject/blog/static/imagenes" #copiar ``media/ckeditor``
-CKEDITOR_UPLOAD_PATH = "/media/"# Subir archivos
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.sep.join(
+    os.path.abspath(__file__).split(os.sep)[:-2] + ['media']
+)
+
+CKEDITOR_MEDIA_PREFIX = MEDIA_URL  # copiar ``media/ckeditor``
+CKEDITOR_UPLOAD_PATH = "/media/"  # Subir archivos
 
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'width': 'auto',
-
-        
-       
-        
     },
 }
 
@@ -116,4 +114,3 @@ THUMBNAIL_ALIASES = {
         'slider': {'size': (1500, 550), 'crop': True},
     },
 }
-
