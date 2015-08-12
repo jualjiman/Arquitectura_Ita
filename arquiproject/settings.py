@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'xha+p33!o#fw=ih#^=$osasl+k^7hx+zy4g0n+%i7rqaykt$_t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [
-    '.arquitectura.jualjiman.com.'
+    '.ita-arquitectura.com.',
+    '.ita-arquitectura.com',
 ]
 
 
@@ -95,9 +96,9 @@ MEDIA_ROOT = os.sep.join(
     os.path.abspath(__file__).split(os.sep)[:-2] + ['media']
 )
 
-CKEDITOR_MEDIA_PREFIX = MEDIA_URL  # copiar ``media/ckeditor``
+# CKEDITOR_MEDIA_PREFIX = MEDIA_URL  # copiar ``media/ckeditor``
 CKEDITOR_UPLOAD_PATH = "/media/"  # Subir archivos
-
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
