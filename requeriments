@@ -1,8 +1,0 @@
-Django==1.7.1
-Pillow==2.6.1
-argparse==1.2.1
-bootstrap-admin==0.3.3
-django-ckeditor-updated==4.4.4
-easy-thumbnails==2.2
-sorl-thumbnail==11.12.1b0
-wsgiref==0.1.2
