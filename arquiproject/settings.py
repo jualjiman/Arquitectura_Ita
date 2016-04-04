@@ -98,7 +98,9 @@ MEDIA_ROOT = os.sep.join(
 
 # CKEDITOR_MEDIA_PREFIX = MEDIA_URL  # copiar ``media/ckeditor``
 CKEDITOR_UPLOAD_PATH = "/media/"  # Subir archivos
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_JQUERY_URL = (
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+)
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
