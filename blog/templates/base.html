@@ -48,20 +48,18 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-             <a href="/" class="logo"><img src="{% static 'imagenes/logo/Logo1.png' %}" width="200px"></a>
-             <a href="/" class="logo2"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
+                    <a href="{% url 'index' %}" class="logo"><img src="{% static 'imagenes/logo/Logo1.png' %}" width="200px"></a>
+                    <a href="{% url 'index' %}" class="logo2"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="/acreditacion/">Acreditaci&aacute;n</a>
+                            <a href="{% url 'acreditacion' %}">Acreditación</a>
                         </li>
                         <li>
-                            <a href="/docentes">Docentes</a>
+                            <a href="{% url 'construccion' %}">Docentes</a>
                         </li>
-                       
-                     
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumnos<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -84,13 +82,13 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Arquitectura <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="/mision-vision/">Misi&oacute;n,Visi&oacute;n</a>
+                                    <a href="{% url 'mision_vision' %}">Misión, Visión</a>
                                 </li> 
                                    <li>
-                                    <a href="/historia/">Historia</a>
+                                       <a href="{% url 'historia' %}">Historia</a>
                                 </li>
                                  <li>
-                                    <a href="/perfil-ingreso/">Perfil de ingreso, egreso</a>
+                                     <a href="{% url 'perfil_ingreso' %}">Perfil de ingreso, egreso</a>
                                 </li>
                             
                             </ul>
@@ -103,7 +101,6 @@
             <!-- /.container -->
         </nav>
 
-
         {% block contenido%} {%endblock%}
 
         <hr>
@@ -115,15 +112,12 @@
 
             </div>
                 <div class="col-xs-6 col-sm-4 text-center">
-                   
                     <img class="footer1"src="{% static 'imagenes/logo/logosep.png' %}" width="200px">
-                   
                 </div>
 
                     <div class="col-xs-3 col-sm-4">
                         <hr>
-                           
-                            <hr>
+                        <hr>
                     </div>
                         <div class="col-xs-12">
                     <hr>

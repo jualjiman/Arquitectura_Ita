@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 
   {% block contenido%}
     <!-- Page Content -->
@@ -12,7 +13,7 @@
                     
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="/">Inicio</a>
+                    <li><a href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li class="active">Todas las noticias</li>
                 </ol>
@@ -25,12 +26,9 @@
          
 
         <div class="row">
-          
-
             <div class="col-md-7">
-                <a href="/noticias/{{ entrada.slug }}">
+                <a href="{% url 'noticia' entrada.slug %}">
                      
-                      {% load thumbnail %}
                <img class="ntodas"src="{{ entrada.imagen|thumbnail_url:'noticiaT' }}" alt="" />
                 </a>
             </div>
@@ -39,7 +37,7 @@
                 <p>publicado: {{ entrada.time |date:"d M Y"}}</p>
                 <p>{{ entrada.resumen}}</p>
                 
-                <a class="btn btn-primary" href="/noticias/{{entrada.slug}}">Leer m&aacute;s</i></a>
+                <a class="btn btn-primary" href="{% url 'noticia' entrada.slug %}">Leer más</i></a>
             </div>
         </div>
         <!-- /.row -->

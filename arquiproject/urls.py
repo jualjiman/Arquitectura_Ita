@@ -3,9 +3,9 @@ from blog.views import (
     DocentesView,
     HistoriaView,
     MisionVisionView,
+    NoticiaView,
     NoticiasView,
-    PerfilIngresoView,
-    TodasNView
+    PerfilIngresoView
 )
 
 from django.conf import settings
@@ -28,37 +28,44 @@ urlpatterns = patterns(
     # NOTICIAS
     url(
         r'^noticia/(?P<slug>[-\w]+)/$',
-        NoticiasView.as_view(template_name="noticia.html")
+        NoticiaView.as_view(),
+        name='noticia'
     ),
     # TODAS LAS NOTICIAS
     url(
         r'^noticias/$',
-        TodasNView.as_view(template_name="noticias.html")
+        NoticiasView.as_view(),
+        name='noticias'
     ),
     # HISTORIA
     url(
         r'^historia/$',
-        HistoriaView.as_view(template_name="historia.html")
+        HistoriaView.as_view(),
+        name='historia'
     ),
     # MISION-VISION
     url(
         r'^mision-vision/$',
-        MisionVisionView.as_view(template_name="mision-vision.html")
+        MisionVisionView.as_view(),
+        name='mision_vision'
     ),
     # PERFIN DE INGRESO Y EGRESO
     url(
         r'^perfil-ingreso/$',
-        PerfilIngresoView.as_view(template_name="perfil-ingreso.html")
+        PerfilIngresoView.as_view(),
+        name='perfil_ingreso'
     ),
     # ACREDITACION
     url(
         r'^acreditacion/$',
-        AcreditacionView.as_view(template_name="acreditacion.html")
+        AcreditacionView.as_view(),
+        name='acreditacion'
     ),
     # DOCENTES
     url(
         r'^docentes/$',
-        DocentesView.as_view(template_name="construccion.html")
+        DocentesView.as_view(),
+        name='construccion'
     ),
     url(
         r'^static/(?P<path>.*)$',
