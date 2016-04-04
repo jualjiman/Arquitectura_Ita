@@ -114,3 +114,9 @@ THUMBNAIL_ALIASES = {
         'slider': {'size': (1500, 550), 'crop': True},
     },
 }
+
+# Local Settings import
+try:
+    from local_settings import *  # NOQA
+except:
+    pass
