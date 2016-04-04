@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block titulo %}<title>Campo de trabajo - Instituto Tecnológico de Acapulco</title>{% endblock%}
+{% block contenido%}
+    <div class="row">
+        <br><br>
+        <div class="text-center" >
+            <img class="ntodas" alt="Campo de trabajo" src="{% static 'imagenes/imagenes/campo_de_trabajo.jpg' %}" />	
+        </div>	
+
+        <div class="text-justify1 margin-top-low" >
+
+            <h3 class="text-red">CAMPO DE TRABAJO</h3>
+            <p>
+                El arquitecto es el profesional que asume la responsabilidad de 
+                proyectar y construir los espacios habitables que necesita la sociedad, 
+                incluyendo aspectos físicos y culturales. Su trabajo surge a partir 
+                de las necesidades de la sociedad, en este sentido debe promover 
+                los medios para cubrir esas expectativas sin deteriorar el 
+                contexto cultural y ecológico.
+            </p>
+            <br>
+        </div>	
+    </div>	
+{% endblock%}

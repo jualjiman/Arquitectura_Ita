@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block titulo %}<title>Objetivo general - Instituto Tecnológico de Acapulco</title>{% endblock%}
+{% block contenido%}
+    <div class="row">
+        <br><br>
+        <div class="text-center" >
+            <img class="ntodas" alt="Objetivo general" src="{% static 'imagenes/imagenes/objetivo_general.jpg' %}" />	
+        </div>	
+
+        <div class="text-justify1 margin-top-low" >
+
+            <h3 class="text-red">Objetivo General</h3>
+            <p>
+                Formar en competencias, profesionistas lideres con excelencia 
+                academica y humanistica, capaces de diseñar, gestionar y 
+                construir el habitad humano con alto desempeño, sustentabilidad 
+                y vocacion de servicio a la sociedad.
+            </p>
+            <br>
+        </div>	
+    </div>	
+{% endblock%}

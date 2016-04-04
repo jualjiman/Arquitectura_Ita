@@ -1,16 +1,13 @@
 from blog.views import (
-    AcreditacionView,
     DocentesView,
-    HistoriaView,
-    MisionVisionView,
     NoticiaView,
     NoticiasView,
-    PerfilIngresoView
 )
 
 from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 
 urlpatterns = patterns(
@@ -19,54 +16,74 @@ urlpatterns = patterns(
         r'^admin/',
         include(admin.site.urls)
     ),
-    # INDEX
     url(
         r'^$',
         'blog.views.index',
         name='index'
     ),
-    # NOTICIAS
     url(
         r'^noticia/(?P<slug>[-\w]+)/$',
         NoticiaView.as_view(),
         name='noticia'
     ),
-    # TODAS LAS NOTICIAS
     url(
         r'^noticias/$',
         NoticiasView.as_view(),
         name='noticias'
     ),
-    # HISTORIA
     url(
         r'^historia/$',
-        HistoriaView.as_view(),
+        TemplateView.as_view(
+            template_name='historia.html'
+        ),
         name='historia'
     ),
-    # MISION-VISION
     url(
         r'^mision-vision/$',
-        MisionVisionView.as_view(),
+        TemplateView.as_view(
+            template_name='mision-vision.html'
+        ),
         name='mision_vision'
     ),
-    # PERFIN DE INGRESO Y EGRESO
     url(
         r'^perfil-ingreso/$',
-        PerfilIngresoView.as_view(),
+        TemplateView.as_view(
+            template_name='perfil-ingreso.html'
+        ),
         name='perfil_ingreso'
     ),
-    # ACREDITACION
     url(
         r'^acreditacion/$',
-        AcreditacionView.as_view(),
+        TemplateView.as_view(
+            template_name='acreditacion.html'
+        ),
         name='acreditacion'
     ),
-    # DOCENTES
+    url(
+        r'^objetivo-general/$',
+        TemplateView.as_view(
+            template_name='objetivo-general.html'
+        ),
+        name='objetivo_general'
+    ),
+    url(
+        r'^campo-de-trabajo/$',
+        TemplateView.as_view(
+            template_name='campo-de-trabajo.html'
+        ),
+        name='campo_de_trabajo'
+    ),
     url(
         r'^docentes/$',
         DocentesView.as_view(),
         name='construccion'
     ),
+    url(
+        r'^ckeditor/',
+        include('ckeditor.urls')
+    ),
+
+    # Static files routes, only used when in debugging mode.
     url(
         r'^static/(?P<path>.*)$',
         'django.views.static.serve',
@@ -81,7 +98,5 @@ urlpatterns = patterns(
             'document_root': settings.MEDIA_ROOT
         }
     ),
-    # CKEDITOR
-    url(r'^ckeditor/', include('ckeditor.urls')),
 )
 handler404 = 'blog.views.e404'

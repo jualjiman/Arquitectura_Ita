@@ -28,26 +28,6 @@ class NoticiasView(ListView):
     template_name = 'noticias.html'
 
 
-class HistoriaView(ListView):
-    model = Entrada
-    template_name = 'historia.html'
-
-
-class MisionVisionView(ListView):
-    model = Entrada
-    template_name = "mision-vision.html"
-
-
-class PerfilIngresoView(ListView):
-    model = Entrada
-    template_name = "perfil-ingreso.html"
-
-
-class AcreditacionView(ListView):
-    model = Entrada
-    template_name = "acreditacion.html"
-
-
 class DocentesView(ListView):
     model = Entrada
     template_name = "construccion.html"
