@@ -28,11 +28,6 @@ class NoticiasView(ListView):
     template_name = 'noticias.html'
 
 
-class DocentesView(ListView):
-    model = Entrada
-    template_name = "construccion.html"
-
-
 def e404(request):
     return render(
         request,
