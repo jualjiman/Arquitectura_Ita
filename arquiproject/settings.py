@@ -138,7 +138,7 @@ THUMBNAIL_ALIASES = {
         'noticiaG': {'size': (730, 380), 'crop': True},
         'noticiaT': {'size': (600, 250), 'crop': True},
         'slider': {'size': (1500, 550), 'crop': True},
-        'teacher-avatar': {'size': (150, 150), 'crop': True},
+        'teacher-avatar': {'size': (300, 300), 'crop': True},
     },
 }
 

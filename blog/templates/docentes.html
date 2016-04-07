@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block titulo %}<title>Docentes - Instituto Tecnológico de Acapulco</title>{% endblock%}
 {% block contenido%}
@@ -19,7 +20,8 @@
                     <div class="col-sm-3">
                         <a href="{% url 'docente' semblanza.slug%}">
                             <div class="thumbnail">
-                                <img class="rounded-avatar-image" src="{{ semblanza.imagen.url }}" alt="{{ semblanza.nombre }}">
+                                <img class="rounded-avatar-image" src="{{ semblanza.imagen|thumbnail_url:'teacher-avatar' }}" alt="{{ semblanza.nombre }}">
+                                <img class="ntodas" src="{{ slider.imagen|thumbnail_url:'slider' }}" alt="" />
                                 <div class="caption">
                                     <h5 class="text-center"><strong>{{ semblanza.nombre }}</strong></h5>
                                 </div>

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block titulo %}<title>{{ semblanza.nombre }} - Instituto Tecnológico de Acapulco</title>{% endblock%}
 {% block contenido%}
@@ -14,7 +15,7 @@
                 <div class="col-sm-12">
                 </div>
                 <div class="col-sm-3 text-center">
-                    <img class="rounded-avatar-image" alt="Arq. Federico Zagal Leon" src="{{ semblanza.imagen.url }}" />    
+                    <img class="rounded-avatar-image" src="{{ semblanza.imagen|thumbnail_url:'teacher-avatar' }}" alt="{{ semblanza.nombre }}">
                 </div>
                 <div class="col-sm-9 text-justify">
                     {{ semblanza.contenido|safe }}
