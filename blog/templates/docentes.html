@@ -12,116 +12,25 @@
         <div class="text-justify1 margin-top-low" >
 
             <h3 class="text-red">DOCENTES</h3>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3 class="text-red">Federico Zagal León</h3>
-                    <h4 class="text-red">Semblanza</h4>
+            <h4 class="text-red">SEMBLANZAS</h4>
+            {% if semblanzas %}
+                <div class="row">
+                    {% for semblanza in semblanzas %}
+                    <div class="col-sm-3">
+                        <a href="{% url 'docente' semblanza.slug%}">
+                            <div class="thumbnail">
+                                <img class="rounded-avatar-image" src="{{ semblanza.imagen.url }}" alt="{{ semblanza.nombre }}">
+                                <div class="caption">
+                                    <h5 class="text-center"><strong>{{ semblanza.nombre }}</strong></h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="col-sm-2 text-center">
-                    <img class="rounded-avatar-image" alt="Arq. Federico Zagal Leon" src="{% static 'imagenes/imagenes/arq_zagal.jpg' %}" />	
-                </div>
-                <div class="col-sm-10 text-justify">
-                    <p>
-                    Nacido en la ciudad de Pachuca Hidalgo, desarrolló su vida familiar y de formación en el Distrito Federal 
-                    hasta terminar su carrera profesional, siendo su deseo salir de la capital de la república para desarrollarse 
-                    profesionalmente en el estado de Guerrero donde está radicando desde el año de 1985.
-                    </p>
-
-                    <p>
-                    Inició su educación básica en la primaria Cultura y Fraternidad y en la secundaria número 104, el nivel 
-                    medio superior se da en el Centro de Estudios Científicos y Tecnológicos No. 1, y en 1977 inicia sus estudios 
-                    de arquitectura en la Unidad Profesional de Tecamachalco del Instituto Politécnico Nacional y en el año de 
-                    1983 presenta su examen profesional con el tema “Complejo Industrial Maderero en la ciudad de Zitácuaro, 
-                    Michoacán” y estudia la maestría de Planificación en Desarrollo Urbano Regional, generando la tesis 
-                    “La vulnerabilidad de la ciudad de Acapulco ante los fenómenos naturales”
-                    </p>
-
-                    <p>
-                    Inicio su actividad laboral desde estudiante dedicando sus horas disponibles en despachos como dibujante 
-                    y proyectista de la obra arquitectónica. Posterior a su egreso fue supervisor de obra en la construcción 
-                    del metro de la ciudad de México, en la línea 7, teniendo a su cargo la estación San Antonio de la Av. 
-                    Revolución. Y una vez concluida la obra, trasladó su residencia a el Proyecto Hidroeléctrico “El Caracol”, 
-                    en la zona de tierra caliente del estado de Guerrero, donde fue superintendente de frente en una planta 
-                    clasificadora de agregados y de una planta dosificadora de concreto atendiendo la elaboración, 
-                    transporte y colocación del mismo en frentes como boca toma, cuarto de máquinas, túneles de desfogue, 
-                    cortina y vertederos y ya con un gran avance de la obra en el año de 1985, se dirige al puerto de Acapulco 
-                    donde su permanencia hasta la fecha ha atendido diversas ramas de su profesión.
-                    </p>
-
-                    <p>
-                    Ingresa al Fideicomiso Acapulco con el cargo de jefe del departamento de apoyo y promoción inmobiliaria, en el 
-                    cual dirige acciones de reordenación urbana en asentamientos irregulares, controlando la invasión de predios 
-                    atendiendo la gestión de líderes y partidos políticos. En este campo desarrolla propuestas urbanas en la 
-                    formación de colonias tales como Nueva Era, y 22 áreas de la Colonia Jardín donde se incorporan 1500 lotes 
-                    al área urbana; así como 2000 lotes de nueva creación en Cd. Renacimiento. En el Polígono “D”, área expropiada por 
-                    el Gobierno Estatal, trabaja en el proyecto urbano de colonias como Paraíso, López Portillo, Radio Koko, Huertas de 
-                    Santa Elena, 15 de Septiembre, 10 de octubre, Coral y Francisco Ruiz Massieu.
-                    </p>
-
-                    <p>
-                    En año de 1989, asciende a subdirector de Acción Social, donde dirige acciones de regularización de la tenencia 
-                    de la tierra en colonias de origen ejidal en Acapulco, tales como Santa Cruz, El Jardín, La Garita, 
-                    El Progreso, Cumbres de Llano Largo, y La Laja. Organizando programas de entrega masiva de escrituras en eventos 
-                    de carácter federal, estatal y municipal, organizando programas piloto de acercamiento a las colonias 
-                    populares donde se les brindo servicios de contratación, pago de predios, trámite de escrituración, reordenación 
-                    urbana y obras de urbanización.
-                    </p>
-
-                    <p>
-                    En el año de 1994, es subdirector de construcción del área técnica del Fideicomiso Acapulco, llevando el 
-                    control de obras de urbanización en la dotación de redes de drenaje sanitario, agua potable y electrificación 
-                    en las colonias del Polígono “D”. Participando en el control de convenios de asociación en participación a 
-                    través de los cuales se construyen unidades habitacionales como Fuentes del Maurel I y II y Las Palmas. 
-                    La construcción de los Mercados José Ma. Morelos y Pavón y Vicente Guerrero en los sectores I y II de Cd. 
-                    Renacimiento y participa en la supervisión de las obras de la central de abastos ubicada en el Polígono “E”, 
-                    de la colonia Emiliano Zapata. Se retira de la dependencia Federal en el año de 1998.
-                    </p>
-
-                    <p>
-                    Ha incursionado en la actividad docente como catedrático en la carrera de arquitectura del Instituto Tecnológico 
-                    de Acapulco a partir del año de 1989, impartiendo las materias de instalaciones en los edificios, urbanismo, 
-                    diseño arquitectónico, análisis de costos, administración y programación de obras. En el año de 1999, es nombrado 
-                    Jefe del Departamento de Ciencias de la Tierra, administrando hasta la fecha la carrera de arquitectura en la 
-                    que participan 35 profesores y profesores y 581 alumnos que se forman en este Instituto. Desde esta trinchera 
-                    ha organizado eventos tan importantes como las Semanas Académicas de Arquitectura, concursos de diseño 
-                    arquitectónico, coloquios de desarrollo urbano, exposiciones de fin de curos en diversos puntos de la ciudad, 
-                    encuentros de egresados incrementando la eficiencia terminal, viajes de prácticas a distintos destinos del país, 
-                    convenios de vinculación con asociaciones de profesionistas, asociaciones civiles y universidades del país, 
-                    ha participado en reuniones nacionales de seguimiento curricular, cursos de actualización profesional para 
-                    los docentes, la certificación del Instituto bajo la norma de calidad ISO 9001 versión 2000 y en agosto del 
-                    año 2007 acredita el programa académico reconocido por su calidad ante la comunidad nacional. Del año 2010 al 2015, 
-                    fue Jefe del Departamento de Comunicación y Difusión del I.T. de Acapulco y a partir del 2016 nuevamente asume el 
-                    cargo de Jefe de Departamento de Ciencias de la Tierra en el área de Arquitectura.
-                    </p>
-
-                    <p>
-                    Ha sido reconocido por el Ejecutivo del Estado con el premio “Pedro Pellandini Cussi” por la mejor tesis de 
-                    maestría en el año de 2007. Es miembro de número de la Academia Nacional de Arquitectura por el Capítulo Acapulco. 
-                    Tiene reconocimientos por la Universidad Americana de Acapulco y por la Universidad Loyola del Pacífico por 
-                    su labor docente.
-                    </p>
-
-                    <p>
-                    En la actividad profesional que ha llevado en forma particular cuenta con proyectos y obras de casas habitación 
-                    en la Ciudad de México., Cuernavaca, Taxco, Chilpancingo y Acapulco, Gro.
-                    </p>
-
-                    <p>
-                    Ha formado la familia Zagal Ricart con la Lic. María Guadalupe Ricart Rodríguez, mujer de gran sensibilidad de 
-                    quien ha recibido un apoyo inestimable. Sus hijos son su orgullo y a quienes dedica su esfuerzo y su vida.
-                    </p>
-
-                    <p>
-                    Sus padres, el Profr. Juan Zagal Ángeles y la Sra. Gloria León Martínez, le dieron a luz un dos de marzo de 1960, 
-                    y sus hermanos Raúl, Alejandro y Juan Rubén, profesionistas todos, forman su gran familia a quienes ama profundamente.
-                    </p>
-
-                    <p>
-                    Este es el mundo de Federico Zagal León, hombre sensible, idealista, incansable trabajador, persistente, trayectoria 
-                    que ha girado siempre en torno a su profesión que es la arquitectura.
-                    </p>
-                </div>
-            </div>
+            {% else %}
+                No hay docentes que mostrar.
+            {% endif %}
             <br>
         </div>	
     </div>	

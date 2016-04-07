@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from .models import Entrada, Slider
+from .models import Entrada, Semblanza, Slider
 
 
 def index(request):
@@ -26,6 +26,18 @@ class NoticiaView(DetailView):
 class NoticiasView(ListView):
     model = Entrada
     template_name = 'noticias.html'
+
+
+class SemblanzasView(ListView):
+    model = Semblanza
+    context_object_name = 'semblanzas'
+    template_name = 'docentes.html'
+
+
+class SemblanzaView(DetailView):
+    model = Semblanza
+    context_object_name = 'semblanza'
+    template_name = 'docente.html'
 
 
 def e404(request):

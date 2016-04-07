@@ -70,12 +70,9 @@
             </div>
            <!-- Page Features -->
         {% for entrada in  entradas %}
-        
             <div class="col-md-4 text-center" >
-             
              <a href="{% url 'noticia' entrada.slug %}">
-                <div class="thumbnail">
-                
+                <div class="thumbnail post">
                 <span class="news-date"><h5>{{ entrada.time|date:"d M " }}</h5></span>
               {% load thumbnail %}
                <img src="{{ entrada.imagen|thumbnail_url:'noticia' }}" alt="" />

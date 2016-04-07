@@ -1,17 +1,9 @@
 from ckeditor.fields import RichTextField
 
-from django.conf import global_settings
 from django.db import models
 from django.template.defaultfilters import slugify
 
 
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-)
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
-
-
-# Create your models here.)
 class Entrada(models.Model):
     imagen = models.ImageField(
         upload_to='imagenes',
@@ -36,8 +28,7 @@ class Entrada(models.Model):
             return self.titulo
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.titulo)
+        self.slug = slugify(self.titulo)
         super(Entrada, self).save(*args, **kwargs)
 
 
@@ -57,3 +48,22 @@ class Slider(models.Model):
 
     def __unicode__(self):
         return self.titulo
+
+
+class Semblanza(models.Model):
+    imagen = models.ImageField(
+        upload_to='semblanzas',
+        help_text='Imagen del maestro.'
+    )
+    nombre = models.CharField(
+        max_length=100
+    )
+    contenido = RichTextField()
+    slug = models.SlugField(editable=False)
+
+    def __unicode__(self):
+        return self.nombre
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.nombre)
+        super(Semblanza, self).save(*args, **kwargs)

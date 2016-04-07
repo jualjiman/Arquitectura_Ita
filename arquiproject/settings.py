@@ -10,11 +10,11 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+from django.conf import global_settings
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'xha+p33!o#'
@@ -26,8 +26,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
 
 INSTALLED_APPS = (
     'bootstrap_admin',  # always before django.contrib.admin
@@ -81,6 +79,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+)
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
@@ -93,18 +96,41 @@ MEDIA_ROOT = os.sep.join(
     os.path.abspath(__file__).split(os.sep)[:-2] + ['media']
 )
 
-# CKEDITOR_MEDIA_PREFIX = MEDIA_URL  # copiar ``media/ckeditor``
-CKEDITOR_UPLOAD_PATH = "/media/"  # Subir archivos
+# CKEditor settings
+CKEDITOR_UPLOAD_PATH = '/media/'
 CKEDITOR_JQUERY_URL = (
     '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 )
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': [
+            [
+                'Bold', 'Italic',
+                'Underline', 'Strike',
+                'Subscript', 'Superscript',
+                '-', 'RemoveFormat',
+                '-', 'Table', 'HorizontalRule',
+                'Link', 'Unlink'
+            ],
+            [
+                'NumberedList', 'BulletedList',
+                '-', 'Outdent', 'Indent',
+                '-', 'Blockquote'
+            ],
+            [
+                'Format', 'FontSize'
+            ],
+            [
+                'Cut', 'Copy',
+                'Paste', '-', 'Undo',
+                'Redo', 'Preview'
+            ],
+            ['Source'],
+        ],
+        'skin': 'moono',
         'width': 'auto',
-    },
+    }
 }
-
 
 THUMBNAIL_ALIASES = {
     '': {
@@ -112,6 +138,7 @@ THUMBNAIL_ALIASES = {
         'noticiaG': {'size': (730, 380), 'crop': True},
         'noticiaT': {'size': (600, 250), 'crop': True},
         'slider': {'size': (1500, 550), 'crop': True},
+        'teacher-avatar': {'size': (150, 150), 'crop': True},
     },
 }
 

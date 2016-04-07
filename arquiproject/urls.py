@@ -1,6 +1,8 @@
 from blog.views import (
     NoticiaView,
-    NoticiasView
+    NoticiasView,
+    SemblanzasView,
+    SemblanzaView
 )
 
 from django.conf import settings
@@ -74,10 +76,13 @@ urlpatterns = patterns(
     ),
     url(
         r'^docentes/$',
-        TemplateView.as_view(
-            template_name='docentes.html'
-        ),
+        SemblanzasView.as_view(),
         name='docentes'
+    ),
+    url(
+        r'^docente/(?P<slug>[-\w]+)/$',
+        SemblanzaView.as_view(),
+        name='docente'
     ),
     url(
         r'^ckeditor/',

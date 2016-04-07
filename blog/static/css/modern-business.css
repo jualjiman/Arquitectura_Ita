@@ -38,7 +38,6 @@ margin: 0 auto;}
 
 .thumbnail{
 position: relative;
-min-height: 440px !important;
 }
 .panel-default:hover{
     -webkit-box-shadow: 2px 2px 11px 0px rgba(93, 77, 252, 0.39);

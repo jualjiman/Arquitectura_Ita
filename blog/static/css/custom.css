@@ -1,5 +1,10 @@
 .rounded-avatar-image{
     border-radius: 50%;
-    width: 150px;
-    margin-bottom:15px;
+    width: 190px;
+    margin-bottom:5px;
+    margin-top:10px;
+}
+
+.thumbnail.post{
+    min-height:440px !important;
 }
