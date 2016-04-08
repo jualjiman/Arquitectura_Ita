@@ -2,12 +2,29 @@ from django.contrib import admin
 
 from easy_thumbnails.files import get_thumbnailer
 
-from .models import Entrada, Semblanza, Slider
+from .models import (
+    ArchivoPublicacion,
+    Entrada,
+    Semblanza,
+    Slider,
+    VideoPublicacion
+)
+
+
+class VideoInline(admin.StackedInline):
+    model = VideoPublicacion
+    extra = 0
+
+
+class ArchivoInline(admin.StackedInline):
+    model = ArchivoPublicacion
+    extra = 0
 
 
 class EntradaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'img_publicacion', 'time')
     list_filter = ('time',)
+    inlines = [VideoInline, ArchivoInline, ]
 
     def img_publicacion(self, instance):
         options = {
