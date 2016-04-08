@@ -59,6 +59,7 @@ class Semblanza(models.Model):
         max_length=100
     )
     contenido = RichTextField()
+    activo = models.BooleanField(default=True)
     slug = models.SlugField(editable=False)
 
     def __unicode__(self):
