@@ -35,7 +35,7 @@ class SemblanzasView(ListView):
 
 
 class SemblanzaView(DetailView):
-    model = Semblanza
+    queryset = Semblanza.objects.filter(activo=True).order_by('nombre')
     context_object_name = 'semblanza'
     template_name = 'docente.html'
 
