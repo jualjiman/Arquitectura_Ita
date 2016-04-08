@@ -4,7 +4,7 @@
 
 {% block meta_headers %}
     <meta property="og:type" content="website" /> 
-    <meta property="og:url" content="http://ita-arquitectura.com/noticias/{{ entrada.slug }}/" /> 
+    <meta property="og:url" content="http://ita-arquitectura.com/noticia/{{ entrada.slug }}/" /> 
     <meta property="og:title"  content="{{ entrada.titulo  }} | Instituto Tecnológico de Acapulco" />
     {% if object.imagen %}
         <meta property="og:image" content="http://ita-arquitectura.com{{ entrada.imagen|thumbnail_url:'noticiaG' }}" />
