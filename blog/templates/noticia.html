@@ -7,7 +7,7 @@
     <meta property="og:type" content="website" /> 
     <meta property="og:url" content="http://ita-arquitectura.com/noticia/{{ entrada.slug }}/" /> 
     <meta property="og:title"  content="{{ entrada.titulo  }} | Instituto Tecnológico de Acapulco" />
-    {% if object.imagen %}
+    {% if entrada.imagen %}
         <meta property="og:image" content="http://ita-arquitectura.com{{ entrada.imagen|thumbnail_url:'noticiaG' }}" />
     {% endif %}
 {% endblock meta_headers %}
@@ -28,7 +28,7 @@
                     </li>
                     <li class="active"></li>
                 </ol>
-                <h1 class="page-header">{{ object.titulo }}
+                <h1 class="page-header">{{ entrada.titulo }}
                     </h1>
 
             </div>
@@ -50,15 +50,44 @@
                        
                    </div>
             </div>
-                 <form>
-                
-                <p>{{ object.contenido| safe }}</p>
-                    <p> Publicado: {{ object.time }}</p>
-                    <p>Archivo: {{object.pdfpublicacion }}</p>
-               
-                </form>
-                
+                <p><strong><span class="glyphicon glyphicon-time icon-styles"></span> Publicado: {{ entrada.time }}</strong></p>
+                <p>{{ entrada.contenido| safe }}</p>
           </div>
+
+        <div class="row">
+            {% if entrada.archivos %}
+                <hr>
+                <h4>Archivos</h4>
+                {% for archivo in entrada.archivos %}
+                    {% if forloop.first %}
+                        <hr>
+                    {% endif %}
+                    <div class="margin-top-low">
+                        <a target="_blank" class="text-green link" href="{{ archivo.archivo.url }}">
+                            <span class="glyphicon glyphicon-paperclip icon-styles"></span>
+                            {{ archivo.descripcionArchivo }}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            {% if entrada.videos %}
+                <hr>
+                <h4>Videos</h4>
+                {% for video in entrada.videos %}
+                    {% if forloop.first %}
+                        <hr>
+                    {% endif %}
+                    <h5>
+                        <span class="glyphicon glyphicon-play-circle icon-styles icon-video"></span>
+                        {{ video.descripcionVideoYoutube }}
+                    </h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item"  src="//www.youtube.com/embed/{{ video.claveYoutube }}" ></iframe>
+                    </div>      
+                {% endfor %}
+            {% endif %}
+        </div>
         <!-- /.row -->
          <hr>
       <div id="disqus_thread"></div>

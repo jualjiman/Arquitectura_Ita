@@ -22,6 +22,14 @@ class Entrada(models.Model):
     time = models.DateTimeField()
     slug = models.SlugField(editable=False)
 
+    @property
+    def videos(self):
+        return VideoPublicacion.objects.filter(publicacion=self)
+
+    @property
+    def archivos(self):
+        return ArchivoPublicacion.objects.filter(publicacion=self)
+
     class Meta:
         ordering = ['-time']
 
