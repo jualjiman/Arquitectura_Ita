@@ -8,3 +8,11 @@
 .thumbnail.post{
     min-height:440px !important;
 }
+
+.glyphicon.icon-styles{
+    margin-right: 10px;
+    font-size: 14px;
+}
+.glyphicon.icon-styles.icon-video{
+    color:#C15B5B;
+}
