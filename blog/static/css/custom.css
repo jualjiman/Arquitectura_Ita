@@ -16,3 +16,15 @@
 .glyphicon.icon-styles.icon-video{
     color:#C15B5B;
 }
+
+.thumbnail .caption h3{
+    font-size: 18px;
+}
+
+.thumbnail .caption p{
+    font-size: 13px;
+}
+
+.thumbnail .caption small{
+    font-size: 13px;
+}
