@@ -13,7 +13,7 @@ def index(request):
         "index.html",
         {
             "entradas": entradas,
-            "sliders": sliders,
+            "slides": sliders,
         }
     )
 

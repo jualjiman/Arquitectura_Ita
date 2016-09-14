@@ -2,15 +2,17 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
+{% block styles %}
+{% endblock styles %}
+
 {% block contenido%}
     <!-- Header Carousel -->
-   <header>
-    <div id="Carousel">
+    <header id="myCarousel" class="carousel slide">
+        <div id="Carousel">
     
-        <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-        {% for slider in  sliders %}
+        {% for slide in  slides %}
                 {% if forloop.first %}
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 {% else %}
@@ -23,18 +25,23 @@
         <!-- Wrapper for slides -->
        
         <div class="carousel-inner">
-        {% for slider in  sliders %}
+        {% for slide in  slides %}
                 {% if forloop.first %}
             <div class="item active">
                 {% else %}
                     <div class="item">
                 {%endif%}
 
-               <img class="ntodas" src="{{ slider.imagen|thumbnail_url:'slider' }}" alt="" />
+                {% thumbnail slide.imagen "1500x550" crop="center" as im %}
+                <img
+                    src="{{ im.url }}"
+                    class="ntodas"
+                    alt="{{ slide.titulo }}" />
+                {% endthumbnail %}
 
-               {% if slider.titulo|length > 0 %}
+               {% if slide.titulo|length > 0 %}
                 <div class="carousel-caption">
-                    <h2>{{ slider.titulo }}</h2>
+                    <h2>{{ slide.titulo }}</h2>
                 </div>
                 {% endif %}
             </div>
@@ -50,6 +57,7 @@
 
     </div>
         </div>
+
     </header>
 
     <!-- Page Content -->
@@ -74,8 +82,10 @@
              <a href="{% url 'noticia' entrada.slug %}">
                 <div class="thumbnail post">
                 <span class="news-date"><h5>{{ entrada.time|date:"d M " }}</h5></span>
-              {% load thumbnail %}
-               <img src="{{ entrada.imagen|thumbnail_url:'noticia' }}" alt="" />
+
+                {% thumbnail entrada.imagen "750x400" crop="center" as im %}
+                <img src="{{ im.url }}" alt="" />
+                {% endthumbnail %}
                     
                     <div class="caption">
                 
@@ -97,3 +107,6 @@
         </div>
     </div>
 {% endblock%}
+
+{% block scripts %}
+{% endblock scripts %}

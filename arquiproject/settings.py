@@ -34,7 +34,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'easy_thumbnails',
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
@@ -130,16 +129,6 @@ CKEDITOR_CONFIGS = {
         'skin': 'moono',
         'width': 'auto',
     }
-}
-
-THUMBNAIL_ALIASES = {
-    '': {
-        'noticia': {'size': (750, 400), 'crop': True},
-        'noticiaG': {'size': (730, 380), 'crop': True},
-        'noticiaT': {'size': (600, 250), 'crop': True},
-        'slider': {'size': (1500, 550), 'crop': True},
-        'teacher-avatar': {'size': (300, 300), 'crop': True},
-    },
 }
 
 # Local Settings import

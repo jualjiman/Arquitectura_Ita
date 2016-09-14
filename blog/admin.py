@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from easy_thumbnails.files import get_thumbnailer
+from sorl.thumbnail.shortcuts import get_thumbnail
 
 from .models import (
     ArchivoPublicacion,
@@ -27,13 +27,13 @@ class EntradaAdmin(admin.ModelAdmin):
     inlines = [VideoInline, ArchivoInline, ]
 
     def img_publicacion(self, instance):
-        options = {
-            'size': (100, 66),
-            'crop': True
-        }
         return (
             '<img src="{}" />'.format(
-                get_thumbnailer(instance.imagen).get_thumbnail(options).url
+                get_thumbnail(
+                    instance.imagen,
+                    "100x66",
+                    crop="center"
+                ).url
             )
         )
     img_publicacion.allow_tags = True
@@ -44,13 +44,13 @@ class SliderAdmin(admin.ModelAdmin):
     list_filter = ('titulo', )
 
     def imagen_slide(self, instance):
-        options = {
-            'size': (250, 100),
-            'crop': True
-        }
         return (
             '<img src="{}" />'.format(
-                get_thumbnailer(instance.imagen).get_thumbnail(options).url
+                get_thumbnail(
+                    instance.imagen,
+                    "250x100",
+                    crop="center"
+                ).url
             )
         )
     imagen_slide.allow_tags = True
@@ -60,14 +60,13 @@ class SemblanzaAdmin(admin.ModelAdmin):
     list_display = ('imagen_maestro', 'nombre', )
 
     def imagen_maestro(self, instance):
-        options = {
-            'size': (100, 100),
-            'crop': True
-        }
-
         return (
             '<img src="{}" />'.format(
-                get_thumbnailer(instance.imagen).get_thumbnail(options).url
+                get_thumbnail(
+                    instance.imagen,
+                    "100x100",
+                    crop="center"
+                ).url
             )
         )
     imagen_maestro.allow_tags = True
