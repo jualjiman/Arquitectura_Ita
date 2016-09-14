@@ -20,8 +20,14 @@
                     <div class="col-sm-3">
                         <a href="{% url 'docente' semblanza.slug%}">
                             <div class="thumbnail">
-                                <img class="rounded-avatar-image" src="{{ semblanza.imagen|thumbnail_url:'teacher-avatar' }}" alt="{{ semblanza.nombre }}">
-                                <img class="ntodas" src="{{ slider.imagen|thumbnail_url:'slider' }}" alt="" />
+
+                                {% thumbnail semblanza.imagen "300x300" crop="center" as im %}
+                                <img
+                                    src="{{ im.url }}"
+                                    alt="{{ semblanza.nombre }}"
+                                    title="{{ semblanza.nombre }}" />
+                                {% endthumbnail %}
+
                                 <div class="caption">
                                     <h5 class="text-center"><strong>{{ semblanza.nombre }}</strong></h5>
                                 </div>
