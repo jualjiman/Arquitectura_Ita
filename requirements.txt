@@ -4,7 +4,6 @@ argparse==1.2.1
 bootstrap-admin==0.3.3
 decorator==4.0.6
 django-ckeditor-updated==4.4.4
-easy-thumbnails==2.2
 gunicorn==19.3.0
 ipython==4.1.1
 ipython-genutils==0.1.0
