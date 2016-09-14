@@ -27,7 +27,9 @@
             <div class="col-md-7">
                 <a href="{% url 'noticia' entrada.slug %}">
                      
-               <img class="ntodas"src="{{ entrada.imagen|thumbnail_url:'noticiaT' }}" alt="" />
+                {% thumbnail entrada.imagen "600x250" crop="center" as im %}
+                    <img class="ntodas" src="{{ im.url }}" alt="" />
+                {% endthumbnail %}
                 </a>
             </div>
             <div class="col-md-5">

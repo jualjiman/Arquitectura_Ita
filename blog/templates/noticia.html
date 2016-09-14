@@ -8,7 +8,9 @@
     <meta property="og:url" content="http://ita-arquitectura.com/noticia/{{ entrada.slug }}/" /> 
     <meta property="og:title"  content="{{ entrada.titulo  }} | Instituto Tecnológico de Acapulco" />
     {% if entrada.imagen %}
-        <meta property="og:image" content="http://ita-arquitectura.com{{ entrada.imagen|thumbnail_url:'noticiaG' }}" />
+        {% thumbnail entrada.imagen "730x380" crop="center" as im %}
+        <meta property="og:image" content="http://ita-arquitectura.com{{ im.url }}" />
+        {% endthumbnail %}
     {% endif %}
 {% endblock meta_headers %}
    
@@ -43,7 +45,9 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                        <img src="{{ entrada.imagen|thumbnail_url:'noticiaG' }}" alt="" />
+                        {% thumbnail entrada.imagen "730x380" crop="center" as im %}
+                            <img src="{{ im.url }}" />
+                        {% endthumbnail %}
                         
                         </div>
                         <br>
