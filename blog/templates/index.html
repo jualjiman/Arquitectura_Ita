@@ -3,48 +3,61 @@
 {% load thumbnail %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'slider/style.css' %}" />
 {% endblock styles %}
+
 {% block contenido%}
     <!-- Header Carousel -->
-    <header>
-            <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-        <div id="wowslider-container1">
-            <div class="ws_images">
-                {% for slide in slides %}
-                    <ul>
-                        <li>
-                            {% thumbnail slide.imagen "1500x550" crop="center" as im %}
-                            <img
-                                src="{{ im.url }}"
-                                alt="{{ slide.titulo }}"
-                                title="{{ slide.titulo }}"
-                                id="wows1_{{ forloop.counter0 }}"/>
-                            {% endthumbnail %}
-                        </li>
-                    </ul>
-                {% endfor %}
-            </div>
-            <div class="ws_bullets">
-                <div>
-                    {% for slide in slides %}
-                    <a href="#" title="{{ slide.titulo }}">
-                        <span>
-                            {% thumbnail slide.imagen "131x55" crop="center" as im %}
-                            <img
-                                src="{{ im.url }}"
-                                alt="{{ slide.titulo }}" />
-                            {% endthumbnail %}
-                            1
-                        </span>
-                    </a>
-                    {% endfor %}
+    <header id="myCarousel" class="carousel slide">
+        <div id="Carousel">
+    
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        {% for slide in  slides %}
+                {% if forloop.first %}
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                {% else %}
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            {% endif%}
+        {%endfor%}
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+       
+        <div class="carousel-inner">
+        {% for slide in  slides %}
+                {% if forloop.first %}
+            <div class="item active">
+                {% else %}
+                    <div class="item">
+                {%endif%}
+
+                {% thumbnail slide.imagen "1700x675" crop="center" as im %}
+                <img
+                    src="{{ im.url }}"
+                    class="ntodas"
+                    alt="{{ slide.titulo }}" />
+                {% endthumbnail %}
+
+               {% if slide.titulo|length > 0 %}
+                <div class="carousel-caption">
+                    <h2>{{ slide.titulo }}</h2>
                 </div>
+                {% endif %}
             </div>
-            <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">http://wowslider.net/</a> by WOWSlider.com v8.7</div>
-            <div class="ws_shadow"></div>
+        {% endfor %}
         </div>
-        <!-- End WOWSlider.com BODY section -->
+       
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </div>
+        </div>
+
     </header>
 
     <!-- Page Content -->
@@ -94,7 +107,6 @@
         </div>
     </div>
 {% endblock%}
+
 {% block scripts %}
-    <script type="text/javascript" src="{% static 'slider/wowslider.js' %}"></script>
-    <script type="text/javascript" src="{% static 'slider/script.js' %}"></script>
 {% endblock scripts %}
