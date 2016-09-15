@@ -20,7 +20,10 @@ class Entrada(models.Model):
     )
     contenido = RichTextField()
     time = models.DateTimeField()
-    slug = models.SlugField(editable=False)
+    slug = models.SlugField(
+        editable=False,
+        max_length=150
+    )
 
     @property
     def videos(self):
@@ -100,10 +103,13 @@ class Semblanza(models.Model):
     )
     contenido = RichTextField()
     activo = models.BooleanField(default=True)
-    slug = models.SlugField(editable=False)
+    slug = models.SlugField(
+        editable=False,
+        max_length=150
+    )
 
     def __unicode__(self):
-        return self.nombre.encode('utf-8')
+        return u'{}'.format(self.nombre)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.nombre.encode('utf-8'))
