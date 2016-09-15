@@ -37,7 +37,7 @@ class Entrada(models.Model):
             return self.titulo
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.titulo)
+        self.slug = slugify(self.titulo.encode('utf-8'))
         super(Entrada, self).save(*args, **kwargs)
 
 
@@ -106,5 +106,5 @@ class Semblanza(models.Model):
         return self.nombre
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.nombre)
+        self.slug = slugify(self.nombre.encode('utf-8'))
         super(Semblanza, self).save(*args, **kwargs)
