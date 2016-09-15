@@ -34,7 +34,7 @@ class Entrada(models.Model):
         ordering = ['-time']
 
     def __unicode__(self):
-            return self.titulo.encode('utf-8')
+        return u'{}'.format(self.titulo)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.titulo.encode('utf-8'))
@@ -87,7 +87,7 @@ class Slider(models.Model):
     )
 
     def __unicode__(self):
-        return self.titulo.encode('utf-8')
+        return u'{}'.format(self.titulo)
 
 
 class Semblanza(models.Model):
