@@ -28,3 +28,8 @@
 .thumbnail .caption small{
     font-size: 13px;
 }
+
+header.carousel {
+    height: 75%;
+    margin-bottom: 35px;
+}
