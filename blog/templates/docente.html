@@ -17,6 +17,7 @@
                 <div class="col-sm-3 text-center">
                     {% thumbnail semblanza.imagen "300x300" crop="center" as im %}
                     <img
+                        class="rounded-avatar-image"
                         src="{{ im.url }}"
                         alt="{{ semblanza.nombre }}"
                         title="{{ semblanza.nombre }}" />
