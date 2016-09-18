@@ -9,7 +9,9 @@ def index(request):
     sliders = Slider.objects.filter(
         activo=True
     )
-    entradas = Entrada.objects.all()[:6]
+    entradas = Entrada.objects.filter(
+        activo=True
+    )[:6]
 
     return render(
         request,

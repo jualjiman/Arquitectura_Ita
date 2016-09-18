@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from sorl.thumbnail.shortcuts import get_thumbnail
 
-from .models import Curso, Conferencista
+from .models import Conferencista, Curso, Obra
 
 
 class CursoAdmin(admin.ModelAdmin):
@@ -26,7 +26,13 @@ class CursoAdmin(admin.ModelAdmin):
     imagen_curso.allow_tags = True
 
 
+class ObraInline(admin.StackedInline):
+    model = Obra
+    extra = 0
+
+
 class ConferencistaAdmin(admin.ModelAdmin):
+    inlines = [ObraInline, ]
     list_display = (
         'imagen_conferencista',
         'nombre',

@@ -32,8 +32,8 @@ class Curso(models.Model):
 
 class Conferencista(models.Model):
     imagen = models.ImageField(
-        upload_to='semblanzas',
-        help_text='Imagen del maestro.'
+        upload_to='conferencistas',
+        help_text='Imagen del conferencista.'
     )
     nombre = models.CharField(
         max_length=100
@@ -53,3 +53,16 @@ class Conferencista(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.nombre.encode('utf-8'))
         super(Conferencista, self).save(*args, **kwargs)
+
+
+class Obra(models.Model):
+    """
+    Obra correspondiente a un conferencista.
+    """
+    imagen = models.ImageField(
+        upload_to='obras',
+        help_text='Imagen de obra del conferencista.'
+    )
+    contenido = RichTextField()
+
+    conferencista = models.ForeignKey(Conferencista)
