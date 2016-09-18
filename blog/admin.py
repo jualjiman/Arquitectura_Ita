@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 
 from sorl.thumbnail.shortcuts import get_thumbnail
