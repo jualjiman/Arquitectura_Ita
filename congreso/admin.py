@@ -10,6 +10,7 @@ class CursoAdmin(admin.ModelAdmin):
     list_display = (
         'imagen_curso',
         'nombre',
+        'activo',
     )
 
     def imagen_curso(self, instance):
@@ -29,6 +30,7 @@ class ConferencistaAdmin(admin.ModelAdmin):
     list_display = (
         'imagen_conferencista',
         'nombre',
+        'activo',
     )
 
     def imagen_conferencista(self, instance):

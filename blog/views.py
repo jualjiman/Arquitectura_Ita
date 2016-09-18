@@ -6,7 +6,9 @@ from .models import Entrada, Semblanza, Slider
 
 
 def index(request):
-    sliders = Slider.objects.filter(activo=True)
+    sliders = Slider.objects.filter(
+        activo=True
+    )
     entradas = Entrada.objects.all()[:6]
 
     return render(
@@ -20,23 +22,33 @@ def index(request):
 
 
 class NoticiaView(DetailView):
-    model = Entrada
+    queryset = Entrada.objects.filter(activo=True)
     template_name = 'noticia.html'
 
 
 class NoticiasView(ListView):
-    model = Entrada
+    queryset = Entrada.objects.filter(
+        activo=True
+    ).order_by(
+        'titulo'
+    )
     template_name = 'noticias.html'
 
 
 class SemblanzasView(ListView):
-    model = Semblanza
+    queryset = Semblanza.objects.filter(
+        activo=True
+    ).order_by(
+        'nombre'
+    )
     context_object_name = 'semblanzas'
     template_name = 'docentes.html'
 
 
 class SemblanzaView(DetailView):
-    queryset = Semblanza.objects.filter(activo=True).order_by('nombre')
+    queryset = Semblanza.objects.filter(
+        activo=True
+    )
     context_object_name = 'semblanza'
     template_name = 'docente.html'
 
