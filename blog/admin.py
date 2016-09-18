@@ -23,7 +23,12 @@ class ArchivoInline(admin.StackedInline):
 
 
 class EntradaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'img_publicacion', 'time')
+    list_display = (
+        'titulo',
+        'img_publicacion',
+        'time',
+        'activo',
+    )
     list_filter = ('time',)
     inlines = [VideoInline, ArchivoInline, ]
 
@@ -41,7 +46,11 @@ class EntradaAdmin(admin.ModelAdmin):
 
 
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'imagen_slide')
+    list_display = (
+        'titulo',
+        'imagen_slide',
+        'activo',
+    )
     list_filter = ('titulo', )
 
     def imagen_slide(self, instance):
@@ -58,7 +67,11 @@ class SliderAdmin(admin.ModelAdmin):
 
 
 class SemblanzaAdmin(admin.ModelAdmin):
-    list_display = ('imagen_maestro', 'nombre', )
+    list_display = (
+        'imagen_maestro',
+        'nombre',
+        'activo',
+    )
 
     def imagen_maestro(self, instance):
         return (

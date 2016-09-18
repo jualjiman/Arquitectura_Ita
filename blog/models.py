@@ -24,6 +24,9 @@ class Entrada(models.Model):
         editable=False,
         max_length=150
     )
+    activo = models.BooleanField(
+        default=True
+    )
 
     @property
     def videos(self):
