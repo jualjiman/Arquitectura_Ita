@@ -11,7 +11,7 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Publicaciones</h1>
                 <ol class="breadcrumb">
-                    <li><a href="{% url 'index' %}">Inicio</a>
+                    <li><a href="{% url 'main:index' %}">Inicio</a>
                     </li>
                     <li class="active">Todas las publicaciones</li>
                 </ol>
@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col-md-7">
-                <a href="{% url 'noticia' entrada.slug %}">
+                <a href="{% url 'main:noticia' entrada.slug %}">
                      
                 {% thumbnail entrada.imagen "600x250" crop="center" as im %}
                     <img class="ntodas" src="{{ im.url }}" alt="" />
@@ -37,7 +37,7 @@
                 <p>publicado: {{ entrada.time |date:"d M Y"}}</p>
                 <p>{{ entrada.resumen}}</p>
                 
-                <a class="btn btn-primary" href="{% url 'noticia' entrada.slug %}">Leer más</i></a>
+                <a class="btn btn-primary" href="{% url 'main:noticia' entrada.slug %}">Leer más</i></a>
             </div>
         </div>
         <!-- /.row -->

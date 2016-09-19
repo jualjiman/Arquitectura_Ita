@@ -13,8 +13,13 @@
     margin-right: 5px;
     font-size: 14px;
 }
+
 .glyphicon.icon-styles.icon-video{
     color:#C15B5B;
+}
+
+.thumbnail .caption{
+    min-height: 100px;
 }
 
 .thumbnail .caption h3{

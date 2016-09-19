@@ -79,9 +79,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Template directories
+# See https://docs.djangoproject.com/en/1.7/ref/settings/#template-dirs
+TEMPLATE_DIRS = (
+    os.path.realpath(os.path.join(BASE_DIR, 'templates')),
+)
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+)
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
 )
+
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 

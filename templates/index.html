@@ -79,7 +79,7 @@
            <!-- Page Features -->
         {% for entrada in  entradas %}
             <div class="col-md-4 text-center" >
-             <a href="{% url 'noticia' entrada.slug %}">
+             <a href="{% url 'main:noticia' entrada.slug %}">
                 <div class="thumbnail post">
                 <span class="news-date"><h5>{{ entrada.time|date:"d M " }}</h5></span>
 
@@ -103,7 +103,7 @@
         <br>
     <div class="row">
         <div class="text-center">
-            <a href="{% url 'noticias' %}" class="btn btn-primary" role="button">VER TODAS LAS PUBLICACIONES</a>
+            <a href="{% url 'main:noticias' %}" class="btn btn-primary" role="button">VER TODAS LAS PUBLICACIONES</a>
         </div>
     </div>
 {% endblock%}

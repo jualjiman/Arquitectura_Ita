@@ -50,20 +50,20 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a href="{% url 'index' %}" class="logo"><img src="{% static 'imagenes/logo/Logo1.png' %}" width="200px"></a>
-                    <a href="{% url 'index' %}" class="logo2"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
+                    <a href="{% url 'main:index' %}" class="logo"><img src="{% static 'imagenes/logo/Logo1.png' %}" width="200px"></a>
+                    <a href="{% url 'main:index' %}" class="logo2"><img src="{% static 'imagenes/logo/LOGOTEC.png' %}" width="80px"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{% url 'index' %}">Inicio</a>
+                            <a href="{% url 'main:index' %}">Inicio</a>
                         </li>
                         <li>
-                            <a href="{% url 'acreditacion' %}">Acreditación</a>
+                            <a href="{% url 'main:acreditacion' %}">Acreditación</a>
                         </li>
                         <li>
-                            <a href="{% url 'docentes' %}">Docentes</a>
+                            <a href="{% url 'main:docentes' %}">Docentes</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumnos<b class="caret"></b></a>
@@ -86,19 +86,19 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Arquitectura <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{% url 'mision_vision' %}">Misión, Visión</a>
+                                    <a href="{% url 'main:mision_vision' %}">Misión, Visión</a>
                                 </li> 
                                 <li>
-                                       <a href="{% url 'historia' %}">Historia</a>
+                                       <a href="{% url 'main:historia' %}">Historia</a>
                                 </li>
                                 <li>
-                                     <a href="{% url 'perfil_ingreso' %}">Perfil de ingreso, egreso</a>
+                                     <a href="{% url 'main:perfil_ingreso' %}">Perfil de ingreso, egreso</a>
                                 </li>
                                 <li>
-                                     <a href="{% url 'objetivo_general' %}">Objetivo general</a>
+                                     <a href="{% url 'main:objetivo_general' %}">Objetivo general</a>
                                 </li>
                                 <li>
-                                     <a href="{% url 'campo_de_trabajo' %}">Campo de trabajo</a>
+                                     <a href="{% url 'main:campo_de_trabajo' %}">Campo de trabajo</a>
                                 </li>
                             </ul>
                         </li>

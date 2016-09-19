@@ -65,7 +65,10 @@ class Obra(models.Model):
     )
     contenido = RichTextField()
 
-    conferencista = models.ForeignKey(Conferencista)
+    conferencista = models.ForeignKey(
+        Conferencista,
+        related_name='obras'
+    )
 
     def __unicode__(self):
         return u'{}'.format(self.nombre)
