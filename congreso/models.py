@@ -69,6 +69,3 @@ class Obra(models.Model):
         Conferencista,
         related_name='obras'
     )
-
-    def __unicode__(self):
-        return u'{}'.format(self.nombre)
