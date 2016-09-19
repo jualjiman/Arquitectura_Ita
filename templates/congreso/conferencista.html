@@ -7,7 +7,7 @@
     <br/>
     <br/>
     <div class="row">
-        <div class="text-justify1 margin-top-low" >
+        <div class="text-justify1" >
 
             <h3 class="text-red">{{ conferencista.nombre }}</h3>
             <h4 class="text-red">Conferencista</h4>
@@ -32,7 +32,7 @@
                     <hr>
 
                     {% for obra in conferencista.obras.all %}
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 margin-bottom-small">
                         <div class="col-sm-3">
                             {% thumbnail obra.imagen "200x200" crop="center" as im %}
                             <img
