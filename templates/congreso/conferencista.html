@@ -21,15 +21,33 @@
                         title="{{ conferencista.nombre }}" />
                     {% endthumbnail %}
                 </div>
-                <div class="col-sm-9 text-justify">
+                <div class="col-sm-9 text-justify margin-bottom-small">
                     {{ conferencista.contenido|safe }}
                 </div>
-                <hr/>
-                {% for obra in conferencista.obras.all %}
-                <div class="col-sm-12">
-                    meeh
+
+                <div class="col-sm-12 text-justify">
+                {% if conferencista.obras.all.count > 0 %}
+
+                    <h4 class="margin-top-small">Obras</h4>
+                    <hr>
+
+                    {% for obra in conferencista.obras.all %}
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            {% thumbnail obra.imagen "200x200" crop="center" as im %}
+                            <img
+                                src="{{ im.url }}"
+                                alt="obra {{ conferencista.nombre }}"
+                                title="obra {{ conferencista.nombre }}" />
+                            {% endthumbnail %}
+                        </div>
+                        <div class="col-sm-9">
+                            {{ obra.contenido|safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
                 </div>
-                {% endfor %}
             </div>
             <br>
         </div>  

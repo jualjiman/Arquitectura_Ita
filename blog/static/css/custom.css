@@ -5,6 +5,14 @@
     margin-top:10px;
 }
 
+.margin-top-small {
+    margin-top: 20px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 50px;
+}
+
 .thumbnail.post{
     min-height:440px !important;
 }
