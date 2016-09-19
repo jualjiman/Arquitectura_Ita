@@ -2,7 +2,8 @@
 from django.conf.urls import patterns, url
 
 from .views import (
-    ConferencistaView, ConferencistasView
+    ConferencistaView, ConferencistasView,
+    CursoView, CursosView
 )
 
 
@@ -17,5 +18,15 @@ urlpatterns = patterns(
         r'^conferencistas/(?P<slug>[-\w]+)/$',
         ConferencistaView.as_view(),
         name='conferencista'
+    ),
+    url(
+        r'^cursos/$',
+        CursosView.as_view(),
+        name='cursos'
+    ),
+    url(
+        r'^cursos/(?P<slug>[-\w]+)/$',
+        CursoView.as_view(),
+        name='curso'
     ),
 )

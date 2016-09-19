@@ -13,6 +13,10 @@
     margin-bottom: 20px;
 }
 
+.responsive-img {
+    width: 100%;
+}
+
 .thumbnail.post{
     min-height:440px !important;
 }
