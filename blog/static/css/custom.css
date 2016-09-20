@@ -17,6 +17,10 @@
     width: 100%;
 }
 
+.subtitle-color {
+    color: #727272;
+}
+
 .thumbnail.post{
     min-height:440px !important;
 }
