@@ -21,6 +21,10 @@
     color: #727272;
 }
 
+.thumbnail.conference .caption h3 {
+    min-height: 50px;
+}
+
 .thumbnail.post{
     min-height:440px !important;
 }
