@@ -21,6 +21,42 @@
     color: #727272;
 }
 
+.convocatoria p,
+.convocatoria h3 {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.container-fluid.convocatoria-background {
+    background-image: url("/static/imagenes/congreso/convocatoria_background.jpg");
+}
+
+.transparent-white {
+    background: rgba(255,255,255,0.6);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kill-margin-top {
+    margin-top: 0;
+}
+
+.square-button {
+    padding: 20px;
+    min-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    color: white;
+    border-radius: 3px;
+}
+
+.square-button.yellow {background: #fc0;}
+.square-button.green {background: #ad0;}
+.square-button.blue {background: #0cc;}
+.square-button.purple {background: #669;}
+.square-button.red {background: #f33;}
+
 .thumbnail.conference .caption h3 {
     min-height: 50px;
 }

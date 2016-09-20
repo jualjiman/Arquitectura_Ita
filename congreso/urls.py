@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
 
 from .views import (
     ConferencistaView, ConferencistasView,
@@ -28,5 +29,12 @@ urlpatterns = patterns(
         r'^cursos/(?P<slug>[-\w]+)/$',
         CursoView.as_view(),
         name='curso'
+    ),
+    url(
+        r'^convocatoria/$',
+        TemplateView.as_view(
+            template_name='congreso/convocatoria.html'
+        ),
+        name='convocatoria'
     ),
 )
