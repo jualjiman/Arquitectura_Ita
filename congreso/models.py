@@ -13,6 +13,12 @@ class Curso(models.Model):
     nombre = models.CharField(
         max_length=150
     )
+    dias_horario = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        help_text=u'Dias y horario en los que se impartirá el curso.'
+    )
     contenido = RichTextField()
     activo = models.BooleanField(
         default=True
