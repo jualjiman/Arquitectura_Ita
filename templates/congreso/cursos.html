@@ -14,7 +14,7 @@
         {% for curso in  cursos %}
             <div class="col-md-6 text-center" >
              <a href="{% url 'congreso:curso' curso.slug %}">
-                <div class="thumbnail">
+                <div class="thumbnail conference">
                 <span class="news-date"><h5>{{ curso.time|date:"d M " }}</h5></span>
 
                 {% thumbnail curso.imagen "750x300" crop="center" as im %}
@@ -22,7 +22,7 @@
                 {% endthumbnail %}
 
                     <div class="caption">
-                        <h3>{{ curso.nombre }}<br></h3>
+                        <h3 class="conference">{{ curso.nombre }}<br></h3>
                         <h6>
                             <strong class="subtitle-color">
                                 <span class="glyphicon glyphicon-time icon-styles"></span>
