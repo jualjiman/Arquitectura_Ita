@@ -1,3 +1,7 @@
+body {
+    position: relative;
+}
+
 .rounded-avatar-image{
     border-radius: 50%;
     width: 190px;
@@ -49,6 +53,18 @@
     vertical-align: middle;
     color: white;
     border-radius: 3px;
+}
+
+.square-button:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.square-button.sticky {
+    position: fixed;
+    bottom: 0px;
+    right: 25px;
+    z-index: 10000;
 }
 
 .square-button.yellow {background: #fc0;}
