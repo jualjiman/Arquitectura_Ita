@@ -24,6 +24,17 @@
                     <br>
                 </div>
             </div>
+            <h5>
+                <strong>
+                    <span class="glyphicon glyphicon-time icon-styles"></span>
+                    Dias y horario: 
+                    {% if curso.dias_horario%}
+                        {{ curso.dias_horario }}
+                    {% else %}
+                        No disponible
+                    {% endif %}
+                </strong>
+            </h5>
             <p>{{ curso.contenido| safe }}</p>
         </div>
     </div>
