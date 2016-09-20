@@ -30,7 +30,7 @@
     color:#C15B5B;
 }
 
-.thumbnail .caption{
+.thumbnail .caption.speaker {
     min-height: 100px;
 }
 
