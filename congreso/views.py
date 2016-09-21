@@ -19,7 +19,7 @@ class HomeView(ListView):
             activo=True
         ).order_by(
             'nombre'
-        )
+        )[:5]
         return context
 
 
