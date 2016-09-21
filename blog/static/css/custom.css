@@ -72,7 +72,7 @@ body {
 
 .convocatoria-background {
     min-height: 400px;
-    background: url('/static/imagenes/congreso/convocatoria_background.png') no-repeat center center fixed; 
+    background: url('/static/imagenes/congreso/convocatoria_background.png') no-repeat center fixed; 
     background-color: gray;
     -webkit-background-size: cover;
     -moz-background-size: cover;

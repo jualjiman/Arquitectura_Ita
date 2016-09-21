@@ -133,39 +133,37 @@
         </nav>
 
         {% block contenido%} {%endblock%}
-
-        <hr>
-        <div class="row">
-            <div class="col-xs-3 col-sm-4">
+        <div class="container-fluid">
+            <div class="row">
+                <hr>
+                <div class="col-xs-3 col-sm-4">
                     <hr>
-                        
-                        <hr>
-
-            </div>
-                <div class="col-xs-6 col-sm-4 text-center">
-                    <img class="footer1"src="{% static 'imagenes/logo/logosep.png' %}" width="200px">
-                </div>
-
-                    <div class="col-xs-3 col-sm-4">
-                        <hr>
-                        <hr>
-                    </div>
-                        <div class="col-xs-12">
                     <hr>
                 </div>
-            </div>
+                    <div class="col-xs-6 col-sm-4 text-center">
+                        <img class="footer1"src="{% static 'imagenes/logo/logosep.png' %}" width="200px">
+                    </div>
 
-            <!-- Footer -->
-            <footer>
-                <div class="row">
-                    <div class="text-center col-lg-12">
-                        <p>Copyright &copy; Avenida Instituto Tecnológico S/N, Crucero del Cayaco C.P. 39905, Teléfono: 01(744) 442 9011 ext 147, Correo electrónico: arquitecutra.ita@gmail.com.</p>
+                        <div class="col-xs-3 col-sm-4">
+                            <hr>
+                            <hr>
+                        </div>
+                            <div class="col-xs-12">
+                        <hr>
                     </div>
                 </div>
-            </footer>
 
+                <!-- Footer -->
+                <footer>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="text-center">Copyright &copy; Avenida Instituto Tecnológico S/N, Crucero del Cayaco C.P. 39905, Teléfono: 01(744) 442 9011 ext 147, Correo electrónico: arquitecutra.ita@gmail.com.</p>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
         </div>
-        <!-- /.container -->
 
         <!-- jQuery -->
         <script src="{% static 'js/jquery.js' %}"></script>
