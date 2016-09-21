@@ -1,0 +1,141 @@
+body {
+    position: relative;
+}
+
+.rounded-avatar-image{
+    border-radius: 50%;
+    width: 190px;
+    margin-bottom:5px;
+    margin-top:10px;
+}
+
+.margin-top-small {
+    margin-top: 20px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 20px;
+}
+
+.responsive-img {
+    width: 100%;
+}
+
+.subtitle-color {
+    color: #727272;
+}
+
+.dark-jumbotron {
+    background: #1d2226;
+    color: white;
+}
+
+.convocatoria h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.convocatoria p,
+.convocatoria h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.square-button {
+    padding: 20px;
+    min-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    color: white;
+    border-radius: 3px;
+}
+
+.square-button:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.square-button.sticky {
+    position: fixed;
+    bottom: 0px;
+    right: 25px;
+    z-index: 10000;
+}
+
+.accented-container {
+    background: #f7f7f7;
+    padding-bottom: 20px;
+}
+
+.convocatoria-background {
+    min-height: 400px;
+    background: url('/static/imagenes/congreso/convocatoria_background.png') no-repeat center center fixed; 
+    background-color: gray;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.square-button.yellow {background: #fc0;}
+.square-button.green {background: #ad0;}
+.square-button.blue {background: #0cc;}
+.square-button.purple {background: #669;}
+.square-button.red {background: #f33;}
+
+.thumbnail.demo {
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+    background-color: inherit;
+}
+
+.thumbnail.demo:hover {
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+}
+
+.thumbnail.conference .caption h3 {
+    min-height: 50px;
+}
+
+.thumbnail.conference-demo .caption h3 {
+    min-height: 70px;
+}
+
+.thumbnail.post{
+    min-height:440px !important;
+}
+
+.glyphicon.icon-styles{
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.glyphicon.icon-styles.icon-video{
+    color:#C15B5B;
+}
+
+.thumbnail .caption.speaker {
+    min-height: 100px;
+}
+
+.thumbnail .caption h3{
+    font-size: 18px;
+}
+
+.thumbnail .caption p{
+    font-size: 13px;
+}
+
+.thumbnail .caption small{
+    font-size: 13px;
+}
+
+header.carousel {
+    height: 75%;
+    margin-bottom: 35px;
+}

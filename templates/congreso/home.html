@@ -59,7 +59,7 @@
                 {% for conferencista in conferencistas %}
                 <div class="col-sm-4">
                     <a href="{% url 'congreso:conferencista' conferencista.slug%}">
-                        <div class="thumbnail">
+                        <div class="thumbnail demo">
 
                             {% thumbnail conferencista.imagen "400x400" crop="center" as im %}
                             <img
@@ -90,7 +90,7 @@
                 {% for curso in  cursos %}
                 <div class="col-md-2">
                  <a href="{% url 'congreso:curso' curso.slug %}">
-                    <div class="thumbnail conference">
+                    <div class="thumbnail demo conference-demo">
                     <span class="news-date"><h5>{{ curso.time|date:"d M " }}</h5></span>
 
                     {% thumbnail curso.imagen "300x300" crop="center" as im %}
