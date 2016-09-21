@@ -4,6 +4,25 @@ from django.views.generic import DetailView, ListView
 from .models import Conferencista, Curso
 
 
+class HomeView(ListView):
+    queryset = Conferencista.objects.filter(
+        activo=True
+    ).order_by(
+        'nombre'
+    )
+    context_object_name = 'conferencistas'
+    template_name = 'congreso/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['cursos'] = Curso.objects.filter(
+            activo=True
+        ).order_by(
+            'nombre'
+        )
+        return context
+
+
 class ConferencistasView(ListView):
     queryset = Conferencista.objects.filter(
         activo=True

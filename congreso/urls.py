@@ -4,12 +4,17 @@ from django.views.generic import TemplateView
 
 from .views import (
     ConferencistaView, ConferencistasView,
-    CursoView, CursosView
+    CursoView, CursosView, HomeView
 )
 
 
 urlpatterns = patterns(
     '',
+    url(
+        r'^home/$',
+        HomeView.as_view(),
+        name='home'
+    ),
     url(
         r'^conferencistas/$',
         ConferencistasView.as_view(),

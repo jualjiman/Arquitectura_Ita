@@ -25,24 +25,21 @@ body {
     color: #727272;
 }
 
+.dark-jumbotron {
+    background: #1d2226;
+    color: white;
+}
+
+.convocatoria h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
 .convocatoria p,
 .convocatoria h3 {
     text-align: center;
-    margin-bottom: 45px;
-}
-
-.container-fluid.convocatoria-background {
-    background-image: url("/static/imagenes/congreso/convocatoria_background.jpg");
-}
-
-.transparent-white {
-    background: rgba(255,255,255,0.6);
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.kill-margin-top {
-    margin-top: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .square-button {
@@ -67,14 +64,46 @@ body {
     z-index: 10000;
 }
 
+.accented-container {
+    background: #f7f7f7;
+    padding-bottom: 20px;
+}
+
+.convocatoria-background {
+    min-height: 400px;
+    background: url('/static/imagenes/congreso/convocatoria_background.png') no-repeat center center fixed; 
+    background-color: gray;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .square-button.yellow {background: #fc0;}
 .square-button.green {background: #ad0;}
 .square-button.blue {background: #0cc;}
 .square-button.purple {background: #669;}
 .square-button.red {background: #f33;}
 
+.thumbnail.demo {
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+    background-color: inherit;
+}
+
+.thumbnail.demo:hover {
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+}
+
 .thumbnail.conference .caption h3 {
     min-height: 50px;
+}
+
+.thumbnail.conference-demo .caption h3 {
+    min-height: 70px;
 }
 
 .thumbnail.post{

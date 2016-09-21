@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block titulo %}<title>Convocatoria - Instituto Tecnológico de Acapulco</title>{% endblock%}
+{% block contenido%}
+<div class="convocatoria">
+    <div class="container-fluid convocatoria-background">
+    </div>	
+    <div class="container-fluid dark-jumbotron">
+        <div class="container-fluid">
+            <div class="text-center margin-top-low" >
+                <p>
+                    El Tecnológico Nacional de México, a través del Instituto Tecnológico de Acapulco,
+                    y la Academia de Arquitectura invitan al:
+                </p>
+                <h1>2° Congreso Nacional de Arquitectura</h1>
+                <h3>
+                    17 al 21 de octubre Cursos-taller/Conferencias magistrales/Mesas de debate
+                </h3>
+                <div class="row">
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/convocatoria_mesas_de_debate_congreso.pdf' %}">
+                        <div class="col-sm-2">
+                            <div class="square-button yellow">Convocatoria</div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/cartel.pdf' %}">
+                        <div class="col-sm-2">
+                            <div class="square-button green">Cartel</div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/triptico_2o_congreso_nacional_arq.pdf' %}">
+                        <div class="col-sm-2">
+                            <div class="square-button blue">Triptico</div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/programa_congreso.pdf' %}">
+                        <div class="col-sm-3">
+                            <div class="square-button purple">Programa - Conferencias</div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/programa_cursos_taller.pdf' %}">
+                        <div class="col-sm-3">
+                            <div class="square-button red">Programa - Cursos taller</div>
+                        </div>
+                    </a>
+                </div>	
+                <p class="margin-top-small">
+                    Descarga el documento en PDF de tu interés,
+                    o registrate en linea <a href="#"><strong>aqui</strong></a>.
+                </p>
+            </div>	
+        </div>	
+    </div>	
+    <div class="text-center">
+        <h2>CONFERENCISTAS MAGISTRALES</h2>
+        {% if conferencistas %}
+            <div class="row">
+                {% for conferencista in conferencistas %}
+                <div class="col-sm-4">
+                    <a href="{% url 'congreso:conferencista' conferencista.slug%}">
+                        <div class="thumbnail demo">
+
+                            {% thumbnail conferencista.imagen "400x400" crop="center" as im %}
+                            <img
+                                class="rounded-avatar-image"
+                                src="{{ im.url }}"
+                                alt="{{ conferencista.nombre }}"
+                                title="{{ conferencista.nombre }}" />
+                            {% endthumbnail %}
+
+                            <div class="caption speaker">
+                                <h5 class="text-center"><strong>{{ conferencista.nombre }}</strong></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            No hay docentes que mostrar.
+        {% endif %}
+        <br>
+
+    </div>	
+    <div class="container-fluid accented-container text-center">
+        <h2>CURSOS - TALLER</h2>
+        {% if cursos %}
+            <div class="row text-center">
+                {% for curso in  cursos %}
+                <div class="col-md-2">
+                 <a href="{% url 'congreso:curso' curso.slug %}">
+                    <div class="thumbnail demo conference-demo">
+                    <span class="news-date"><h5>{{ curso.time|date:"d M " }}</h5></span>
+
+                    {% thumbnail curso.imagen "300x300" crop="center" as im %}
+                    <img src="{{ im.url }}" alt="" />
+                    {% endthumbnail %}
+
+                        <div class="caption">
+                            <h5 class="conference">{{ curso.nombre }}</h5>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <a href="{% url 'congreso:cursos' %}">
+                    <div class="col-sm-2 col-sm-offset-5">
+                        <div class="square-button purple">Ver todos</div>
+                    </div>
+                </a>
+            </div>	
+        {% endif %}
+    </div>	
+</div>
+{% endblock%}
