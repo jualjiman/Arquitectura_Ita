@@ -36,6 +36,7 @@
                         <div class="col-sm-3">
                             {% thumbnail obra.imagen "200x200" crop="center" as im %}
                             <img
+                                class="rounded-image"
                                 src="{{ im.url }}"
                                 alt="obra {{ conferencista.nombre }}"
                                 title="obra {{ conferencista.nombre }}" />
@@ -52,4 +53,5 @@
             <br>
         </div>  
     </div>  
+    {% include 'congreso/partials/contact-sticky-button.html' %}
 {% endblock%}

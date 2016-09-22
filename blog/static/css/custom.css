@@ -66,6 +66,7 @@ body {
     vertical-align: middle;
     color: white;
     border-radius: 3px;
+    margin-bottom: 4px;
 }
 
 .square-button:hover {
@@ -82,12 +83,13 @@ body {
 .square-button.sticky {
     position: fixed;
     bottom: 0px;
-    right: 25px;
+    right: 20px;
     z-index: 10000;
 }
 
 .square-button.fixed {
     background: rgba(210, 119, 113, 0.7);
+    margin-bottom: 0;
 }
 .square-button.fixed:hover {
     background: #d27771;
@@ -149,6 +151,9 @@ body {
 }
 
 .thumbnail.demo>img.course {
+    border-radius: 3px;
+}
+.rounded-image {
     border-radius: 3px;
 }
 

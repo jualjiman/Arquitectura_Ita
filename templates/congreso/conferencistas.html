@@ -15,7 +15,7 @@
                     {% for conferencista in conferencistas %}
                     <div class="col-sm-3">
                         <a href="{% url 'congreso:conferencista' conferencista.slug%}">
-                            <div class="thumbnail">
+                            <div class="thumbnail demo">
 
                                 {% thumbnail conferencista.imagen "300x300" crop="center" as im %}
                                 <img
@@ -39,4 +39,5 @@
             <br>
         </div>	
     </div>	
+    {% include 'congreso/partials/contact-sticky-button.html' %}
 {% endblock%}
