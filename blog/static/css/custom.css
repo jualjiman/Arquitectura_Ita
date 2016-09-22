@@ -43,28 +43,6 @@ body {
     margin-bottom: 20px;
 }
 
-.square-button {
-    padding: 20px;
-    min-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    vertical-align: middle;
-    color: white;
-    border-radius: 3px;
-}
-
-.square-button:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.square-button.sticky {
-    position: fixed;
-    bottom: 0px;
-    right: 25px;
-    z-index: 10000;
-}
-
 .accented-container {
     background: #f7f7f7;
     padding-bottom: 20px;
@@ -80,11 +58,45 @@ body {
     background-size: cover;
 }
 
+.square-button {
+    padding: 20px;
+    min-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    color: white;
+    border-radius: 3px;
+}
+
+.square-button:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 .square-button.yellow {background: #fc0;}
 .square-button.green {background: #ad0;}
 .square-button.blue {background: #0cc;}
 .square-button.purple {background: #669;}
 .square-button.red {background: #f33;}
+
+.square-button.sticky {
+    position: fixed;
+    bottom: 0px;
+    right: 25px;
+    z-index: 10000;
+}
+
+.square-button.fixed {
+    background: rgba(210, 119, 113, 0.7);
+}
+.square-button.fixed:hover {
+    background: #d27771;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.square-button.sticky.fixed.effect {
+    display:none;
+}
 
 .thumbnail.demo {
     box-shadow: none;
