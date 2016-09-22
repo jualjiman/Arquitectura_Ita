@@ -29,7 +29,7 @@
                             <div class="square-button green">Cartel</div>
                         </div>
                     </a>
-                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/triptico_2o_congreso_nacional_arq.pdf' %}">
+                    <a target="_blank" href="{% static 'documents/congreso/convocatoria/triptico.rar' %}">
                         <div class="col-sm-2">
                             <div class="square-button blue">Triptico</div>
                         </div>
@@ -94,12 +94,13 @@
                     <span class="news-date"><h5>{{ curso.time|date:"d M " }}</h5></span>
 
                     {% thumbnail curso.imagen "300x300" crop="center" as im %}
-                    <img src="{{ im.url }}" alt="" />
+                    <img class="course" src="{{ im.url }}" alt="" />
                     {% endthumbnail %}
 
                         <div class="caption">
                             <h5 class="text-center"><strong>{{ curso.nombre }}</strong></h5>
                         </div>
+
                     </div>
                     </a>
                 </div>

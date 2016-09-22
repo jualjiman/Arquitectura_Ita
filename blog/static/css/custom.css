@@ -136,6 +136,10 @@ body {
     font-size: 13px;
 }
 
+.thumbnail.demo>img.course {
+    border-radius: 3px;
+}
+
 header.carousel {
     height: 75%;
     margin-bottom: 35px;
