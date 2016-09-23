@@ -3,7 +3,10 @@ from django.contrib import admin
 
 from sorl.thumbnail.shortcuts import get_thumbnail
 
-from .models import Conferencista, Curso, Obra
+from .models import (
+    Conferencista, Curso, Obra,
+    RegistroCongreso, RegistroCurso, RegistroMesasDeDebate
+)
 
 
 class CursoAdmin(admin.ModelAdmin):
@@ -51,5 +54,60 @@ class ConferencistaAdmin(admin.ModelAdmin):
         )
     imagen_conferencista.allow_tags = True
 
+
+class RegistroCursoAdmin(admin.ModelAdmin):
+    list_display = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+        'escuela_de_procedencia',
+        'es_alumno_ita',
+    )
+    search_fields = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+    )
+
+
+class RegistroCongresoAdmin(admin.ModelAdmin):
+    list_display = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+        'escuela_de_procedencia',
+        'es_alumno_ita',
+    )
+    search_fields = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+    )
+
+
+class RegistroMesasDeDebateAdmin(admin.ModelAdmin):
+    list_display = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+        'escuela_de_procedencia',
+        'es_alumno_ita',
+    )
+    search_fields = (
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'correo_electronico',
+    )
+
 admin.site.register(Curso, CursoAdmin)
 admin.site.register(Conferencista, ConferencistaAdmin)
+
+admin.site.register(RegistroCurso, RegistroCursoAdmin)
+admin.site.register(RegistroCongreso, RegistroCongresoAdmin)
+admin.site.register(RegistroMesasDeDebate, RegistroMesasDeDebateAdmin)

@@ -75,3 +75,70 @@ class Obra(models.Model):
         Conferencista,
         related_name='obras'
     )
+
+
+class BaseRegister(models.Model):
+    """
+    Modelo base, usado para los registros del congreso.
+    """
+    nombre = models.CharField(
+        max_length=100
+    )
+    apellido_paterno = models.CharField(
+        max_length=50
+    )
+    apellido_materno = models.CharField(
+        max_length=50
+    )
+    correo_electronico = models.EmailField()
+    escuela_de_procedencia = models.CharField(
+        max_length=50
+    )
+
+    es_alumno_ita = models.BooleanField()
+    folio_recibo_oficial = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True
+    )
+
+    estado_municipio = models.CharField(
+        max_length=50
+    )
+
+    class Meta:
+        abstract = True
+
+
+class RegistroCurso(BaseRegister):
+    """
+    Formulario de registro para cursos-taller.
+    """
+    curso = models.ForeignKey(Curso)
+
+
+class RegistroCongreso(BaseRegister):
+    """
+    Formulario de registro para el congreso.
+    """
+    TIPOS_INSCRIPCION = (
+        ('esita', u'Estudiantes ITA (%500.00)'),
+        ('eotra', u'Estudiantes de otra institución ($600.00)'),
+        ('egres', u'Egresados ITA ($700.00)'),
+        ('profe', u'Profesionistas ($1,000.00)'),
+    )
+    tipo_de_inscripcion = models.CharField(
+        max_length=5,
+        choices=TIPOS_INSCRIPCION,
+    )
+
+
+class RegistroMesasDeDebate(BaseRegister):
+    """
+    Formulario de registro para las mesas de debate.
+    """
+    archivo_sintesis = models.FileField(
+        upload_to='archivosintesis',
+        null=True,
+        blank=True
+    )
