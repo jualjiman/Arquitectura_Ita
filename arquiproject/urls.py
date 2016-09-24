@@ -2,6 +2,7 @@
 from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 
 urlpatterns = patterns(
@@ -17,6 +18,17 @@ urlpatterns = patterns(
     url(
         r'congreso/',
         include('congreso.urls', namespace='congreso')
+    ),
+    url(
+        r'congreso/',
+        include('congreso.urls', namespace='congreso')
+    ),
+    url(
+        r'2do-congreso-nacional',
+        RedirectView.as_view(
+            pattern_name='congreso:home',
+            permanent=False
+        )
     ),
     url(
         r'^ckeditor/',
