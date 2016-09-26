@@ -46,9 +46,15 @@
                     </a>
                 </div>	
                 <p class="margin-top-small">
-                    Descarga el documento en PDF de tu interés,
-                    o <strong><a class="link" href="{% url 'congreso:registro_congreso' %}">registrate en linea aqui</strong></a>.
+                    Descarga el documento en PDF de tu interés.
                 </p>
+
+                <a href="{% url 'congreso:registro_mesas_debate' %}">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div class="square-button main">
+                            <strong>Regístrate al Congreso</strong></div>
+                    </div>
+                </a>
             </div>	
         </div>	
     </div>	
@@ -61,7 +67,7 @@
                 <div class="col-md-12">
                     <a href="{% url 'congreso:registro_mesas_debate' %}">
                         <div class="col-sm-2 col-sm-offset-5 margin-top-small">
-                            <div class="square-button purple">Registrate</div>
+                            <div class="square-button purple">Regístrate</div>
                         </div>
                     </a>
                 </div>
@@ -137,7 +143,7 @@
                     <div class="col-md-12">
                         <p class="margin-top-small">
                             <strong>
-                                <a class="link" href="{% url 'congreso:registro_curso' %}">registrate en linea aqui</a>
+                                <a class="link" href="{% url 'congreso:registro_curso' %}">Regístrate en linea aquí</a>
                             </strong>
                         </p>
                     </div>
