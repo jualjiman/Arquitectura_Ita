@@ -51,7 +51,7 @@
 
                 <a href="{% url 'congreso:registro_congreso' %}">
                     <div class="col-sm-4 col-sm-offset-4">
-                        <div class="square-button main">
+                        <div class="square-button green-important main">
                             <strong>Regístrate al Congreso</strong></div>
                     </div>
                 </a>
@@ -67,7 +67,7 @@
                 <div class="col-md-12">
                     <a href="{% url 'congreso:registro_mesas_debate' %}">
                         <div class="col-sm-2 col-sm-offset-5 margin-top-small">
-                            <div class="square-button purple">Regístrate</div>
+                            <div class="square-button green-important">Regístrate</div>
                         </div>
                     </a>
                 </div>
@@ -133,19 +133,19 @@
                     {% endfor %}
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <a href="{% url 'congreso:cursos' %}">
-                            <div class="col-sm-2 col-sm-offset-5">
-                                <div class="square-button purple">Ver todos</div>
+                    <div class="col-md-3 col-md-offset-3">
+                        <a href="{% url 'congreso:registro_curso' %}">
+                            <div class="col-sm-12">
+                                <div class="square-button green-important">Regístrate</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-12">
-                        <p class="margin-top-small">
-                            <strong>
-                                <a class="link" href="{% url 'congreso:registro_curso' %}">Regístrate en linea aquí</a>
-                            </strong>
-                        </p>
+                    <div class="col-md-3">
+                        <a href="{% url 'congreso:cursos' %}">
+                            <div class="col-sm-12">
+                                <div class="square-button purple">Ver todos</div>
+                            </div>
+                        </a>
                     </div>
                 </div>	
             {% endif %}

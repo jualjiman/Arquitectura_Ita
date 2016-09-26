@@ -110,10 +110,10 @@ form input[type='checkbox'] {
 .square-button.green {background: #ad0;}
 .square-button.blue {background: #0cc;}
 .square-button.purple {background: #669;}
+.square-button.green-important {background: #58bb7f;}
 .square-button.main {
     font-size: 18px;
     margin-bottom: 20px;
-    background: #58bb7f;
 }
 .square-button.red {background: #f33;}
 
