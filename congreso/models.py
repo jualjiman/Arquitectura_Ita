@@ -95,7 +95,7 @@ class BaseRegister(models.Model):
         max_length=50
     )
 
-    es_alumno_ita = models.BooleanField()
+    es_alumno_ITA = models.BooleanField()
     folio_recibo_oficial = models.CharField(
         max_length=50,
         null=True,
@@ -105,9 +105,25 @@ class BaseRegister(models.Model):
     estado_municipio = models.CharField(
         max_length=50
     )
+    clave_de_registro = models.CharField(
+        max_length=8,
+        unique=True,
+        editable=False
+    )
+    es_valido = models.BooleanField(
+        blank=True,
+        default=False
+    )
 
     class Meta:
         abstract = True
+
+    def __unicode__(self):
+        return "Registro de {0} {1} {2}".format(
+            self.nombre,
+            self.apellido_paterno,
+            self.apellido_materno
+        )
 
 
 class RegistroCurso(BaseRegister):

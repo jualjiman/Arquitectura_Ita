@@ -4,7 +4,9 @@ from django.views.generic import TemplateView
 
 from .views import (
     ConferencistaView, ConferencistasView,
-    CursoView, CursosView, HomeView
+    CursoView, CursosView,
+    HomeView, RegistroCongresoCreateView, RegistroCursoCreateView,
+    RegistroMesasDeDebateCreateView
 )
 
 
@@ -34,6 +36,21 @@ urlpatterns = patterns(
         r'^cursos/(?P<slug>[-\w]+)/$',
         CursoView.as_view(),
         name='curso'
+    ),
+    url(
+        r'^registro-curso/$',
+        RegistroCursoCreateView.as_view(),
+        name='registro_curso'
+    ),
+    url(
+        r'^registro-congreso/$',
+        RegistroCongresoCreateView.as_view(),
+        name='registro_congreso'
+    ),
+    url(
+        r'^registro-mesas-de-debate/$',
+        RegistroMesasDeDebateCreateView.as_view(),
+        name='registro_mesas_debate'
     ),
     url(
         r'^convocatoria/$',

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block contenido%}
+<div class="container">
+    <h2 class="main-title">REGISTRO A CURSOS TALLER</h2>
+    <h4>De lunes 17 al juevez 20 de octubre de 2016</h4>
+    <p>Sede: Edificio 800's de Arquitectura del Instituto Tecnológico de Acapulco</p>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{% url 'congreso:registro_curso' %}" method="POST">
+                {% include 'common/form.html' %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    var title = "Participantes foraneos",
+        message = "Su registro en el curso taller será tomado en cuenta a reserva " +
+                  "de presentar su baucher original de pago al momento del inicio " +
+                  "del curso o taller.";
+
+    $("#warning-box #title").text(title);
+    $("#warning-box #message").text(message);
+</script>
+{% endblock scripts %}

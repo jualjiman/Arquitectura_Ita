@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block titulo %}<title>Conferencistas - Instituto Tecnológico de Acapulco</title>{% endblock%}
+{% block contenido%}
+    <div class="container">
+        <h2 class="main-title">CONFERENCISTAS</h2>
+        <div class="row">
+            <br><br>
+            <div class="margin-top-low" >
+                {% if conferencistas %}
+                    <div class="row">
+                        {% for conferencista in conferencistas %}
+                        <div class="col-sm-3">
+                            <a href="{% url 'congreso:conferencista' conferencista.slug%}">
+                                <div class="thumbnail demo">
+
+                                    {% thumbnail conferencista.imagen "300x300" crop="center" as im %}
+                                    <img
+                                        class="rounded-avatar-image"
+                                        src="{{ im.url }}"
+                                        alt="{{ conferencista.nombre }}"
+                                        title="{{ conferencista.nombre }}" />
+                                    {% endthumbnail %}
+
+                                    <div class="caption speaker">
+                                        <h5 class="text-center"><strong>{{ conferencista.nombre }}</strong></h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    No hay docentes que mostrar.
+                {% endif %}
+                <br>
+            </div>	
+        </div>	
+    </div>	
+    {% include 'congreso/partials/contact-sticky-button.html' %}
+{% endblock%}

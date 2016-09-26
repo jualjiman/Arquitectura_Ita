@@ -1,10 +1,12 @@
-//opacity navbar menu
+$(function(){
+   $(".square-button.sticky.fixed").hide();
+});
+
 $(document).on("scroll",function(){
-    console.log("meeeh");
     if($(document).scrollTop()>200){
-        $(".square-button.sticky.fixed.effect").fadeIn();
+        $(".square-button.sticky.fixed").fadeIn();
 
     } else{
-        $(".square-button.sticky.fixed.effect").fadeOut();
+        $(".square-button.sticky.fixed").fadeOut();
     }
 });

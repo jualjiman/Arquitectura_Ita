@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block contenido%}
+<div class="container">
+    <h2 class="main-title">REGISTRO AL 2do CONGRESO NACIONAL DE ARQUITECTURA 2016</h2>
+    <h4>El espacio Público como agente del cambio social</h4>
+    <p>Sedes: Instituto Tecnológico de Acapulco y Salón Cabaret de Grand Hotel Acapulco</p>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{% url 'congreso:registro_congreso' %}" method="POST">
+                {% include 'common/form.html' %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    var title = "Para validar su registro será necesario",
+        message = "Enviar baucher de depósito bancario escaneado, anotando nombre y escuela de procedencia al correro:" +
+                  "arquitectura.ita@gmail.com, Su baucher de pagos erá canjeado por un recibo oficial, directamente en " +
+                  "el departamento de Recursos Financieros del Instituto Tecnológico de Acapulco, presentando su baucher " +
+                  "original. Para lo cual se dará la asistencia necesaria durante el evento.";
+
+    $("#warning-box #title").text(title);
+    $("#warning-box #message").text(message);
+</script>
+{% endblock scripts %}

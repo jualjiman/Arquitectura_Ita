@@ -1,0 +1,53 @@
+{% load addclass %}
+
+{% csrf_token %}
+
+<div class="row">
+    {% if form.non_field_errors %}
+    <!--Validation errors-->
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        {% for error in form.non_field_errors %}
+            {{ error|escape|safe }}
+        {% endfor %}
+    </div>
+    {% endif  %}
+
+    <!--Message that will appear once that user takes an accion over "es_alumno_ita"-->
+    <div id="warning-box" class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <strong id="title"></strong>
+        <p id="message"></p>
+    </div>
+
+    {% for field in form %}
+    <!--{{field.html_name}} field-->
+        <div class="col-sm-6">
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field|addclass:'form-control' }}
+                {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+
+                {% if field.errors %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    {% for error in field.errors %}
+                        {{ error|escape }}
+                    {% endfor %}
+                </div>
+                {% endif  %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="col-sm-12 text-right">
+        <button
+            type="submit"
+            class="btn square-button purple">Enviar</button>
+    </div>
+</div>

@@ -57,53 +57,63 @@ class ConferencistaAdmin(admin.ModelAdmin):
 
 class RegistroCursoAdmin(admin.ModelAdmin):
     list_display = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
         'escuela_de_procedencia',
-        'es_alumno_ita',
+        'es_alumno_ITA',
+        'curso',
     )
     search_fields = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
     )
+    readonly_fields = ['clave_de_registro', ]
 
 
 class RegistroCongresoAdmin(admin.ModelAdmin):
     list_display = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
         'escuela_de_procedencia',
-        'es_alumno_ita',
+        'es_alumno_ITA',
     )
     search_fields = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
     )
+    readonly_fields = ['clave_de_registro', ]
 
 
 class RegistroMesasDeDebateAdmin(admin.ModelAdmin):
     list_display = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
         'escuela_de_procedencia',
-        'es_alumno_ita',
+        'es_alumno_ITA',
     )
     search_fields = (
+        'clave_de_registro',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
         'correo_electronico',
     )
+    readonly_fields = ['clave_de_registro', ]
 
 admin.site.register(Curso, CursoAdmin)
 admin.site.register(Conferencista, ConferencistaAdmin)
