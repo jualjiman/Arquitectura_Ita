@@ -99,7 +99,8 @@ class BaseRegister(models.Model):
     folio_recibo_oficial = models.CharField(
         max_length=50,
         null=True,
-        blank=True
+        blank=True,
+        help_text=u'Sólo alumnos ITA'
     )
 
     estado_municipio = models.CharField(
