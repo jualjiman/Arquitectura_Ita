@@ -119,13 +119,6 @@ class BaseRegister(models.Model):
     class Meta:
         abstract = True
 
-    def __unicode__(self):
-        return "Registro de {0} {1} {2}".format(
-            self.nombre,
-            self.apellido_paterno,
-            self.apellido_materno
-        )
-
 
 class RegistroCurso(BaseRegister):
     """
