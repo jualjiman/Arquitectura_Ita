@@ -132,7 +132,7 @@ class RegistroCongreso(BaseRegister):
     Formulario de registro para el congreso.
     """
     TIPOS_INSCRIPCION = (
-        ('esita', u'Estudiantes ITA (%500.00)'),
+        ('esita', u'Estudiantes ITA ($500.00)'),
         ('eotra', u'Estudiantes de otra institución ($600.00)'),
         ('egres', u'Egresados ITA ($700.00)'),
         ('profe', u'Profesionistas ($1,000.00)'),
