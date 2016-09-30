@@ -56,6 +56,13 @@ h2.main-title{
     margin: 45px 0 20px 0;
     text-transform: uppercase;
 }
+h2.main-title.without-top-margin {
+    margin: 10px 0 20px 0;
+}
+.without-top-bottom-margin {
+    margin: 10px 0;
+
+}
 
 form input[type='checkbox'] {
     display: block;
