@@ -150,6 +150,8 @@ class RegistroCursoAdmin(RegistroModelAdmin):
     report_extra_fields = ['curso', ]
     report_field_extra_names = ['Curso', ]
 
+    list_filter = ['curso', ]
+
 
 class RegistroCongresoAdmin(RegistroModelAdmin):
     list_display_extra_fields = [
@@ -162,6 +164,7 @@ class RegistroCongresoAdmin(RegistroModelAdmin):
     report_name = 'registro_congreso'
     report_extra_fields = ['tipo_de_inscripcion', ]
     report_field_extra_names = ['Tipo de inscripcion', ]
+    list_filter = ['tipo_de_inscripcion', ]
 
 
 class RegistroMesasDeDebateAdmin(RegistroModelAdmin):
