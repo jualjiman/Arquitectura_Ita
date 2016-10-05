@@ -116,15 +116,19 @@ class BaseRegister(models.Model):
         default=False
     )
 
+    @property
+    def nombre_completo(self):
+        return u' '.join([
+            self.nombre.encode('utf-8'),
+            self.apellido_paterno.encode('utf-8'),
+            self.apellido_materno.encode('utf-8'),
+        ])
+
     class Meta:
         abstract = True
 
     def __unicode__(self):
-        return "Registro de {0} {1} {2}".format(
-            self.nombre,
-            self.apellido_paterno,
-            self.apellido_materno
-        )
+        return "Registro de {}".format(self.nombre_completo)
 
 
 class RegistroCurso(BaseRegister):
@@ -132,6 +136,10 @@ class RegistroCurso(BaseRegister):
     Formulario de registro para cursos-taller.
     """
     curso = models.ForeignKey(Curso)
+
+    class Meta:
+        verbose_name = u'Registro de curso'
+        verbose_name_plural = u'Registros de curso'
 
 
 class RegistroCongreso(BaseRegister):
@@ -149,6 +157,10 @@ class RegistroCongreso(BaseRegister):
         choices=TIPOS_INSCRIPCION,
     )
 
+    class Meta:
+        verbose_name = u'Registro de congreso'
+        verbose_name_plural = u'Registros de congreso'
+
 
 class RegistroMesasDeDebate(BaseRegister):
     """
@@ -159,3 +171,7 @@ class RegistroMesasDeDebate(BaseRegister):
         null=True,
         blank=True
     )
+
+    class Meta:
+        verbose_name = u'Registro de mesas de debate'
+        verbose_name_plural = u'Registros de mesas de debate'

@@ -14,3 +14,4 @@ simplegeneric==0.8.1
 sorl-thumbnail==11.12.1b
 traitlets==4.1.0
 wsgiref==0.1.2
+unicodecsv
