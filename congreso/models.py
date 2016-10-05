@@ -119,10 +119,13 @@ class BaseRegister(models.Model):
     @property
     def nombre_completo(self):
         return u' '.join([
-            self.nombre.encode('utf-8'),
-            self.apellido_paterno.encode('utf-8'),
-            self.apellido_materno.encode('utf-8'),
+            self.nombre,
+            self.apellido_paterno,
+            self.apellido_materno,
         ])
+
+    def __unicode__(self):
+        return u'Registro de {}'.format(self.nombre_completo)
 
     class Meta:
         abstract = True

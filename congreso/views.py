@@ -86,7 +86,7 @@ class BaseRegisterCreateView(SuccessMessageMixin, CreateView):
             instance.apellido_materno,
             instance.correo_electronico,
             instance.escuela_de_procedencia,
-            random.randint(0, 9)
+            random.randint(0, 10000000)
         )
         dirty_key = md5(unique_data).hexdigest()
         return (dirty_key[:8]).upper()
