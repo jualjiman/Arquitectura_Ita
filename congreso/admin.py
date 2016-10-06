@@ -67,6 +67,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'correo_electronico',
         'escuela_de_procedencia',
         'es_alumno_ITA',
+        'es_valido'
     ]
     #
     # Campos extra, en caso de ser necesario.
