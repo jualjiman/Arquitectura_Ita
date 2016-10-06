@@ -97,6 +97,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'es_alumno_ITA',
         'folio_recibo_oficial',
         'estado_municipio',
+        'es_valido',
     ]
     #
     # Campos extra, en caso de ser necesarios.
@@ -114,6 +115,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'Es alumno ITA',
         'Folio recibo oficial',
         'Estado municipio',
+        'Es valido',
     ]
     report_field_extra_names = []
     #
