@@ -203,6 +203,7 @@ form input[type='checkbox'] {
 header.carousel {
     height: 75%;
     margin-bottom: 35px;
+    margin-top: 104px;
 }
 
 .quote h2 {
@@ -211,4 +212,31 @@ header.carousel {
 
 .quote h3 {
     color: #2e6da4;
+}
+
+header{
+    padding-top:5px;
+    background: #f8f8f8;
+}
+
+header .col-xs-3{
+    text-align:center;
+}
+header .col-xs-3 img{
+    display:inline-block
+}
+header .col-xs-3 .logoita{
+    width:100px
+}
+header .col-xs-3 .logofederal{
+    width:245px
+}
+header .col-xs-6{
+    height:100px;
+}
+header .col-xs-6 h1{
+    font:18px 'soberanaTitularBold';
+    text-transform:uppercase;
+    text-align:center;
+    color:#909090
 }
