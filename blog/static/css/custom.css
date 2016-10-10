@@ -96,6 +96,7 @@ form input[type='checkbox'] {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin-top: 110px;
 }
 
 .square-button {
