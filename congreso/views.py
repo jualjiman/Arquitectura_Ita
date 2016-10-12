@@ -81,11 +81,11 @@ class BaseRegisterCreateView(SuccessMessageMixin, CreateView):
 
     def generate_register_key(self, instance):
         unique_data = "{0}{1}{2}{3}{4}{5}".format(
-            instance.nombre,
-            instance.apellido_paterno,
-            instance.apellido_materno,
-            instance.correo_electronico,
-            instance.escuela_de_procedencia,
+            instance.nombre.encode('utf-8'),
+            instance.apellido_paterno.encode('utf-8'),
+            instance.apellido_materno.encode('utf-8'),
+            instance.correo_electronico.encode('utf-8'),
+            instance.escuela_de_procedencia.encode('utf-8'),
             random.randint(0, 10000000)
         )
         dirty_key = md5(unique_data).hexdigest()
