@@ -94,6 +94,11 @@ class BaseRegisterCreateView(SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         self.register_key = self.generate_register_key(form.instance)
         form.instance.clave_de_registro = self.register_key
+
+        form.instance.nombre = form.instance.nombre.upper()
+        form.instance.apellido_paterno = form.instance.apellido_paterno.upper()
+        form.instance.apellido_materno = form.instance.apellido_materno.upper()
+
         return super(BaseRegisterCreateView, self).form_valid(form)
 
     def get_success_message(self, cleaned_data):
