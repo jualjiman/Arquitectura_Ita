@@ -1,5 +1,6 @@
 body {
     position: relative;
+    padding-top: 150px;
 }
 
 small {
@@ -208,8 +209,7 @@ form input[type='checkbox'] {
 
 header.carousel {
     height: 75%;
-    margin-bottom: 35px;
-    margin-top: 104px;
+    margin-bottom: 130px;
 }
 
 .quote h2 {
@@ -249,7 +249,13 @@ header .col-xs-6 h1{
 
 #costsModal img {
     width: 100%;
+}
 
-#main-content {
-    margin-top: 90px;
+#message-box {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 9px;
+    border-radius: 0;
+    opacity: 0.8;
 }

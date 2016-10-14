@@ -1,8 +1,8 @@
 {% if messages %}
-<div class="row">
+<div>
     <div class="col-sm-12">
         {% for message in messages %}
-        <div class="alert alert-dismissible alert-{{ message.tags }} margin-top-medium" role="alert">
+        <div id="message-box" class="alert alert-dismissible alert-{{ message.tags }}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hiden="true">&times;</span></button>
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             {{ message|safe }}
