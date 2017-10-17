@@ -89,14 +89,8 @@ form input[type='checkbox'] {
     border-bottom: solid 1px #e9e9e9;
 }
 
-.convocatoria-background {
-    min-height: 400px;
-    background: url('/static/imagenes/congreso/convocatoria_background.png') no-repeat center fixed; 
-    background-color: gray;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.convocatoria-background img {
+    width: 100%;
 }
 
 .square-button {
