@@ -10,14 +10,7 @@
     </div>	
     <div class="container-fluid dark-jumbotron">
         <div class="container-fluid">
-            <div class="text-center margin-top-low" >
-                <p>
-                    El Tecnológico Nacional de México, a través del Instituto Tecnológico de Acapulco,
-                    y la Academia de Arquitectura invitan al:
-                </p>
-                <h1>2° Congreso Nacional de Arquitectura</h1>
-                <h3><strong>"El Espacio Público, como agente del cambio social"</strong></h3>
-                <h3>13 al 17 de noviembre Cursos-taller/Conferencias magistrales/Mesas de debate</h3>
+            <div class="text-center padding-top-small" >
                 <div class="row">
                     <a target="_blank" href="{% static 'documents/congreso/convocatoria/convocatoria_mesas_de_debate_congreso.pdf' %}">
                         <div class="col-sm-2">
@@ -55,6 +48,12 @@
                             <strong>Regístrate al Congreso</strong></div>
                     </div>
                 </a>
+                <a href="{% url 'congreso:registro_mesas_debate' %}">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div class="square-button green-important main">
+                            <strong>Regístrate a Mesa de Debates</strong></div>
+                    </div>
+                </a>
                 <a href="#" data-toggle="modal" data-target="#costsModal">
                     <div class="col-sm-2 col-sm-offset-5">
                         <div class="square-button red-important secundary">
@@ -67,7 +66,7 @@
 
     <div class="container-fluid accented-container odd">
         <div class="container text-center">
-            <p style="margin: 50px 0;">
+            <p style="margin: 50px 0 20px; font-size: 17px;">
                 El Instituto Tecnológico de Acapulco realizará este año la Semana Académica y Cultural,
                 que tiene como propósito vincular a la comunidad Tecnológica académica, científica, empresarial
                 y a la sociedad en general. Expertos profesionistas y académicos compartirán sus experiencias

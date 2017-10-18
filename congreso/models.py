@@ -90,6 +90,10 @@ class BaseRegister(models.Model):
     apellido_materno = models.CharField(
         max_length=50
     )
+    numero_control = models.IntegerField(
+        blank=True,
+        null=True
+    )
     correo_electronico = models.EmailField()
     escuela_de_procedencia = models.CharField(
         max_length=50
@@ -99,12 +103,12 @@ class BaseRegister(models.Model):
     folio_recibo_oficial = models.CharField(
         max_length=50,
         null=True,
-        blank=True,
-        help_text=u'Sólo alumnos ITA'
+        blank=True
     )
 
     estado_municipio = models.CharField(
-        max_length=50
+        max_length=50,
+        verbose_name="Estado y Municipio de Procedencia"
     )
     clave_de_registro = models.CharField(
         max_length=8,
@@ -147,10 +151,9 @@ class RegistroCongreso(BaseRegister):
     Formulario de registro para el congreso.
     """
     TIPOS_INSCRIPCION = (
-        ('esita', u'Estudiantes ITA ($500.00)'),
-        ('eotra', u'Estudiantes de otra institución ($600.00)'),
-        ('egres', u'Egresados ITA ($700.00)'),
-        ('profe', u'Profesionistas ($1,000.00)'),
+        ('esita', u'Alumnos y Ex Alumnos ITA ($500.00)'),
+        ('eotra', u'Alumnos otras Instituciones ($700.00)'),
+        ('profe', u'Profesionistas y público en general ($950.00)'),
     )
     tipo_de_inscripcion = models.CharField(
         max_length=5,

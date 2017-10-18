@@ -26,6 +26,10 @@ small {
     margin-bottom: 20px;
 }
 
+.padding-top-small {
+    padding-top: 20px;
+}
+
 .responsive-img {
     width: 100%;
 }
