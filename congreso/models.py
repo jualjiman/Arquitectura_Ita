@@ -99,7 +99,7 @@ class BaseRegister(models.Model):
         max_length=50
     )
 
-    es_alumno_ITA = models.BooleanField()
+    es_alumno_ITA = models.BooleanField(default=False)
     folio_recibo_oficial = models.CharField(
         max_length=50,
         null=True,
