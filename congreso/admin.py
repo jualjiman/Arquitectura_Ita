@@ -66,7 +66,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'nombre_completo',
         'correo_electronico',
         'escuela_de_procedencia',
-        'es_alumno_ITA',
+        'numero_control',
         'es_valido'
     ]
     #
@@ -95,7 +95,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'nombre_completo',
         'correo_electronico',
         'escuela_de_procedencia',
-        'es_alumno_ITA',
+        'numero_control',
         'folio_recibo_oficial',
         'estado_municipio',
         'es_valido',
@@ -113,7 +113,7 @@ class RegistroModelAdmin(admin.ModelAdmin):
         'Nombre completo',
         'Correo_electronico',
         'Escuela_de_procedencia',
-        'Es alumno ITA',
+        'Numero de control',
         'Folio recibo oficial',
         'Estado municipio',
         'Es valido',
